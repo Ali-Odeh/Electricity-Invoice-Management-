@@ -19,57 +19,15 @@ function setupEventListeners() {
     document.getElementById('nlQueryForm')?.addEventListener('submit', handleNLQuery);
 }
 
-async function checkAuth() {
+function checkAuth() {
     const token = localStorage.getItem('authToken');
     const user = localStorage.getItem('currentUser');
 
     if (token && user) {
         authToken = token;
         currentUser = JSON.parse(user);
-        
-        // Verify token is still valid by making a test request
-        console.log('Checking if stored token is still valid for user:', currentUser.email);
-        try {
-            // Choose appropriate endpoint based on user role
-            let testEndpoint = '/admin/users';
-            if (currentUser.role === 'Customer') {
-                testEndpoint = `/invoices/my-invoices?customerId=${currentUser.userId}`;
-            } else if (currentUser.role === 'Invoice_Creator') {
-                testEndpoint = `/invoices/my-created?creatorId=${currentUser.userId}`;
-            } else if (currentUser.role === 'Super_Creator') {
-                testEndpoint = `/invoices/provider?providerId=${currentUser.providerId}`;
-            } else if (currentUser.role === 'Auditor') {
-                testEndpoint = `/audit/invoices?auditorUserId=${currentUser.userId}`;
-            }
-            
-            // Make a HEAD request to verify token without fetching data
-            const response = await fetch(`${API_BASE}${testEndpoint}`, {
-                method: 'HEAD',
-                headers: {
-                    'Authorization': `Bearer ${authToken}`
-                }
-            });
-            
-            if (response.status === 401 || response.status === 403) {
-                console.warn('Stored token is invalid or expired');
-                localStorage.removeItem('authToken');
-                localStorage.removeItem('currentUser');
-                authToken = null;
-                currentUser = null;
-                alert('Your session has expired. Please login again.');
-                showPage('loginPage');
-                return;
-            }
-            
-            console.log('Token is valid, showing dashboard');
-            showDashboard();
-        } catch (error) {
-            console.error('Error checking token validity:', error);
-            // If network error, still try to show dashboard
-            showDashboard();
-        }
+        showDashboard();
     } else {
-        console.log('No stored credentials found');
         showPage('loginPage');
     }
 }
@@ -94,9 +52,6 @@ async function handleLogin(e) {
         const data = await response.json();
         authToken = data.token;
         currentUser = data;
-
-        console.log('Login successful! Token:', authToken);
-        console.log('User data:', currentUser);
 
         localStorage.setItem('authToken', authToken);
         localStorage.setItem('currentUser', JSON.stringify(currentUser));
@@ -136,7 +91,6 @@ function showDashboard() {
     switch(currentUser.role) {
         case 'Admin':
             document.getElementById('adminDashboard').style.display = 'block';
-            loadUsers();
             loadProviders();
             break;
         case 'Customer':
@@ -169,90 +123,28 @@ function showTab(tabName) {
 
     // Load data for specific tabs
     if (tabName === 'logs') loadAuditLogs();
-    if (tabName === 'pricing') loadPricingHistory();
 }
 
 async function apiCall(endpoint, options = {}) {
-    const headers = {
-        'Content-Type': 'application/json'
-    };
-
-    // Add JWT token if available
-    if (authToken && authToken !== 'no-token') {
-        headers['Authorization'] = `Bearer ${authToken}`;
-        console.log('Making API call with token to:', endpoint);
-    } else {
-        console.log('Making API call without token to:', endpoint);
-    }
-
-    const mergedOptions = {
-        ...options,
+    const defaultOptions = {
         headers: {
-            ...headers,
-            ...options.headers
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${authToken}`
         }
     };
 
-    try {
-        const response = await fetch(`${API_BASE}${endpoint}`, mergedOptions);
+    const response = await fetch(`${API_BASE}${endpoint}`, {
+        ...defaultOptions,
+        ...options,
+        headers: { ...defaultOptions.headers, ...options.headers }
+    });
 
-        if (!response.ok) {
-            if (response.status === 401) {
-                // Session expired or invalid token - logout
-                let errorMessage = 'Session expired. Please login again.';
-                try {
-                    const errorData = await response.json();
-                    if (errorData.message) {
-                        errorMessage = errorData.message;
-                    }
-                    console.error('Authentication error:', errorData);
-                } catch (e) {
-                    console.error('Could not parse error response');
-                }
-                
-                // Unauthorized - redirect to login
-                localStorage.removeItem('authToken');
-                localStorage.removeItem('currentUser');
-                authToken = null;
-                currentUser = null;
-                alert(errorMessage);
-                showPage('loginPage');
-                return null;
-            } else if (response.status === 403) {
-                // Permission denied - show error but don't logout
-                let errorMessage = 'Access denied. You do not have permission to perform this action.';
-                try {
-                    const errorData = await response.json();
-                    if (errorData.message) {
-                        errorMessage = errorData.message;
-                    }
-                    console.error('Permission error:', errorData);
-                } catch (e) {
-                    console.error('Could not parse error response');
-                }
-                
-                // Just show error message, don't logout
-                throw new Error(errorMessage);
-            }
-            
-            // Handle other errors
-            let errorMessage = 'Request failed';
-            try {
-                const error = await response.json();
-                errorMessage = error.message || errorMessage;
-            } catch (e) {
-                errorMessage = `Request failed with status ${response.status}`;
-            }
-            throw new Error(errorMessage);
-        }
-
-        return response.json();
-    } catch (error) {
-        if (error.name === 'TypeError' && error.message.includes('fetch')) {
-            throw new Error('Network error. Please check your connection.');
-        }
-        throw error;
+    if (!response.ok) {
+        const error = await response.json();
+        throw new Error(error.message || 'Request failed');
     }
+
+    return response.json();
 }
 
 // Admin Functions
@@ -277,39 +169,7 @@ async function handleCreateUser(e) {
     }
 }
 
-async function loadUsers() {
-    try {
-        const users = await apiCall('/admin/users');
-        if (!users) return; // Token expired, user redirected to login
-        const html = `
-            <table>
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Role</th>
-                        <th>Provider</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    ${users.map(u => `
-                        <tr>
-                            <td>${u.userId}</td>
-                            <td>${u.name}</td>
-                            <td>${u.email}</td>
-                            <td><span class="badge badge-info">${u.role}</span></td>
-                            <td>${u.provider?.name || 'No Provider'}</td>
-                        </tr>
-                    `).join('')}
-                </tbody>
-            </table>
-        `;
-        document.getElementById('usersList').innerHTML = html;
-    } catch (error) {
-        console.error('Error loading users:', error);
-    }
-}
+
 
 async function handleCreateProvider(e) {
     e.preventDefault();
@@ -340,7 +200,6 @@ async function loadProviders() {
         }
 
         const provider = await apiCall(`/admin/providers/${currentUser.providerId}`);
-        if (!provider) return; // Token expired, user redirected to login
         const html = `
             <table>
                 <thead>
@@ -433,7 +292,6 @@ async function loadCustomerInvoices() {
     try {
         console.log('Loading customer invoices for userId:', currentUser.userId);
         const invoices = await apiCall(`/invoices/my-invoices?customerId=${currentUser.userId}`);
-        if (!invoices) return; // Token expired, user redirected to login
         console.log('Received invoices:', invoices);
         displayInvoices(invoices, 'customerInvoices');
     } catch (error) {
@@ -445,7 +303,6 @@ async function loadCustomerInvoices() {
 async function loadCreatorInvoices() {
     try {
         const invoices = await apiCall(`/invoices/my-created?creatorId=${currentUser.userId}`);
-        if (!invoices) return; // Token expired, user redirected to login
         displayInvoices(invoices, 'creatorInvoices');
     } catch (error) {
         console.error('Error loading invoices:', error);
@@ -455,7 +312,6 @@ async function loadCreatorInvoices() {
 async function loadSuperCreatorInvoices() {
     try {
         const invoices = await apiCall(`/invoices/provider?providerId=${currentUser.providerId}`);
-        if (!invoices) return; // Token expired, user redirected to login
         displayInvoices(invoices, 'superCreatorInvoices');
     } catch (error) {
         console.error('Error loading invoices:', error);
@@ -465,7 +321,6 @@ async function loadSuperCreatorInvoices() {
 async function loadAuditorInvoices() {
     try {
         const invoices = await apiCall(`/audit/invoices?auditorUserId=${currentUser.userId}`);
-        if (!invoices) return; // Token expired, user redirected to login
         displayInvoices(invoices, 'auditorInvoices');
     } catch (error) {
         console.error('Error loading invoices:', error);
@@ -538,7 +393,6 @@ function displayInvoices(invoices, containerId) {
 async function loadAuditLogs() {
     try {
         const logs = await apiCall(`/audit/logs?auditorUserId=${currentUser.userId}`);
-        if (!logs) return; // Token expired, user redirected to login
         const html = `
             <table>
                 <thead>
@@ -690,49 +544,4 @@ async function handleUpdateInvoiceSuper(e) {
     } catch (error) {
         alert('Error: ' + error.message);
     }
-}
-
-// Pricing History Functions
-async function loadPricingHistory() {
-    try {
-        const history = await apiCall(`/audit/pricing-history?auditorUserId=${currentUser.userId}`);
-        if (!history) return; // Token expired, user redirected to login
-        displayPricingHistory(history);
-    } catch (error) {
-        console.error('Error loading pricing history:', error);
-        document.getElementById('pricingHistory').innerHTML = '<p class="error">Error loading pricing history: ' + error.message + '</p>';
-    }
-}
-
-function displayPricingHistory(history) {
-    if (!history || history.length === 0) {
-        document.getElementById('pricingHistory').innerHTML = '<p>No pricing history found.</p>';
-        return;
-    }
-
-    const html = `
-        <table>
-            <thead>
-                <tr>
-                    <th>Changed By (Admin)</th>
-                    <th>Price (₪/kWh)</th>
-                    <th>Valid From</th>
-                    <th>Valid To</th>
-                    <th>Status</th>
-                </tr>
-            </thead>
-            <tbody>
-                ${history.map(h => `
-                    <tr>
-                        <td><strong>${h.changedByUser?.name || 'N/A'}</strong></td>
-                        <td>${h.kwhPrice}</td>
-                        <td>${new Date(h.validFrom).toLocaleString()}</td>
-                        <td>${h.validTo ? new Date(h.validTo).toLocaleString() : '<span class="badge badge-success">Current</span>'}</td>
-                        <td>${h.validTo ? '<span class="badge badge-info">Expired</span>' : '<span class="badge badge-success">Active ✓</span>'}</td>
-                    </tr>
-                `).join('')}
-            </tbody>
-        </table>
-    `;
-    document.getElementById('pricingHistory').innerHTML = html;
 }

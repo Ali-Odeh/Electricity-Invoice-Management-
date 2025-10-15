@@ -7,6 +7,7 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.CreationTimestamp;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -28,25 +29,21 @@ public class Invoice {
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "customer_id")
-    @JsonIgnore
   //   @JsonIgnoreProperties({"password", "provider", "createdAt", "updatedAt"})
     private User customer;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "provider_id")
-    @JsonIgnore
      // @JsonIgnoreProperties({"createdAt", "updatedAt", "isActive"})
     private Provider provider;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "created_by_user_id")
-    @JsonIgnore
  //   @JsonIgnoreProperties({"password", "provider", "createdAt", "updatedAt"})
     private User createdByUser;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "pricing_id")
-    @JsonIgnore
     // @JsonIgnoreProperties({"provider", "changedByUser", "createdAt"})
     private PricingHistory pricing;
 
@@ -72,8 +69,8 @@ public class Invoice {
     @Column(name = "payment_date")
     private LocalDate paymentDate;
 
-
-    @Column(name = "created_at")
+    @CreationTimestamp
+    @Column(name = "created_at", updatable = false)
     private LocalDateTime createdAt;
 
 }

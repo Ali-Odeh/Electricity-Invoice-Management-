@@ -18,12 +18,9 @@ public interface PricingHistoryRepository extends JpaRepository<PricingHistory, 
     List<PricingHistory> findByProvider_ProviderId(Integer providerId);
 
     @Query("SELECT p FROM PricingHistory p WHERE p.provider.providerId = :providerId " +
-            "AND p.validFrom <= :date AND (p.validTo IS NULL OR p.validTo > :date)")
-    Optional<PricingHistory> findActivePrice(@Param("providerId") Integer providerId,
-                                             @Param("date") LocalDateTime date);
-
-    @Query("SELECT p FROM PricingHistory p WHERE p.provider.providerId = :providerId " +
             "AND p.validTo IS NULL")
     Optional<PricingHistory> findCurrentPrice(@Param("providerId") Integer providerId);
+
+
 
 }

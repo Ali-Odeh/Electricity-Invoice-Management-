@@ -2,9 +2,204 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palestinian Electricity Invoice Management</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div id="app">
+    <!-- Login Page -->
+    <div id="loginPage" class="page active">
+        <div class="container">
+            <div class="card">
+                <h1>⚡ Electricity Invoice Management</h1>
+                <h2>Login</h2>
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" id="loginEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" id="loginPassword" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Login</button>
+                </form>
+                <div id="loginError" class="error"></div>
+            </div>
+        </div>
+    </div>
 
+    <!-- Dashboard Page -->
+    <div id="dashboardPage" class="page">
+        <nav class="navbar">
+            <div class="nav-content">
+                <h1>⚡ Electricity Management</h1>
+                <div class="nav-right">
+                    <span id="userInfo"></span>
+                    <button onclick="logout()" class="btn btn-secondary">Logout</button>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container">
+            <!-- Admin Dashboard -->
+            <div id="adminDashboard" class="dashboard" style="display:none;">
+                <h2>Admin Dashboard</h2>
+                <div class="tabs">
+                    <button class="tab-btn active" onclick="showTab('users')">Users</button>
+                    <button class="tab-btn" onclick="showTab('providers')">Providers</button>
+                </div>
+
+                <div id="usersTab" class="tab-content active">
+                    <h3>Create Customer</h3>
+                    <form id="createUserForm" class="inline-form">
+                        <input type="number" id="userProviderId" placeholder="Provider ID" required>
+                        <input type="text" id="userName" placeholder="Name" required>
+                        <input type="email" id="userEmail" placeholder="Email" required>
+                        <input type="text" id="userAddress" placeholder="Address" required>
+                        <input type="password" id="userPassword" placeholder="Password" required>
+                        <input type="text" id="userPhone" placeholder="Phone">
+                        <button type="submit" class="btn btn-primary">Create Customer</button>
+                    </form>
+                </div>
+
+                <div id="providersTab" class="tab-content">
+                    <h3>Create Provider</h3>
+                    <form id="createProviderForm" class="inline-form">
+                        <input type="text" id="providerName" placeholder="Provider Name" required>
+                        <input type="text" id="providerCity" placeholder="City" required>
+                        <input type="email" id="providerEmail" placeholder="Email" required>
+                        <input type="text" id="providerPhone" placeholder="Phone Number" required>
+                        <input type="number" step="0.01" id="providerPrice" placeholder="kWh Price" required>
+                        <button type="submit" class="btn btn-primary">Create Provider</button>
+                    </form>
+
+                    <h3>My Provider Information</h3>
+                    <div id="providersList"></div>
+                </div>
+            </div>
+
+            <!-- Customer Dashboard -->
+            <div id="customerDashboard" class="dashboard" style="display:none;">
+                <h2>My Invoices</h2>
+                <div id="customerInvoices"></div>
+            </div>
+
+            <!-- Invoice Creator Dashboard -->
+            <div id="creatorDashboard" class="dashboard" style="display:none;">
+                <h2>Invoice Management</h2>
+                <h3>Create Invoice</h3>
+                <form id="createInvoiceForm" class="inline-form">
+                    <input type="number" id="invoiceCustomerId" placeholder="Customer ID" required>
+                    <input type="number" step="0.01" id="invoiceKwh" placeholder="kWh Consumed" required>
+                    <input type="date" id="invoiceIssueDate" required>
+                    <input type="date" id="invoiceDueDate" required>
+                    <button type="submit" class="btn btn-primary">Create Invoice</button>
+                </form>
+                <h3>My Created Invoices</h3>
+                <div id="creatorInvoices"></div>
+
+                <!-- Update Invoice Modal -->
+                <div id="updateInvoiceModal" class="modal" style="display:none;">
+                    <div class="modal-content">
+                        <span class="close" onclick="closeUpdateModal()">&times;</span>
+                        <h3>Update Invoice</h3>
+                        <form id="updateInvoiceForm">
+                            <input type="hidden" id="updateInvoiceId">
+                            <label>Invoice Number: <span id="updateInvoiceNumber"></span></label>
+                            <input type="number" step="0.01" id="updateKwh" placeholder="kWh Consumed">
+                            <input type="date" id="updateDueDate" placeholder="Due Date">
+                            <select id="updatePaymentStatus">
+                                <option value="">-- Select Status --</option>
+                                <option value="Pending">Pending</option>
+                                <option value="Paid">Paid</option>
+                                <option value="Overdue">Overdue</option>
+                                <option value="Cancelled">Cancelled</option>
+                            </select>
+                            <input type="date" id="updatePaymentDate" placeholder="Payment Date">
+                            <button type="submit" class="btn btn-primary">Update Invoice</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Super Creator Dashboard -->
+            <div id="superCreatorDashboard" class="dashboard" style="display:none;">
+                <h2>Provider Invoice Management</h2>
+                <h3>Create Invoice</h3>
+                <form id="createInvoiceFormSuper" class="inline-form">
+                    <input type="number" id="invoiceCustomerIdSuper" placeholder="Customer ID" required>
+                    <input type="number" step="0.01" id="invoiceKwhSuper" placeholder="kWh Consumed" required>
+                    <input type="date" id="invoiceIssueDateSuper" required>
+                    <input type="date" id="invoiceDueDateSuper" required>
+                    <button type="submit" class="btn btn-primary">Create Invoice</button>
+                </form>
+                <h3>All Provider Invoices</h3>
+                <div id="superCreatorInvoices"></div>
+
+                <!-- Update Invoice Modal for Super Creator -->
+                <div id="updateInvoiceModalSuper" class="modal" style="display:none;">
+                    <div class="modal-content">
+                        <span class="close" onclick="closeUpdateModalSuper()">&times;</span>
+                        <h3>Update Invoice</h3>
+                        <form id="updateInvoiceFormSuper">
+                            <input type="hidden" id="updateInvoiceIdSuper">
+                            <label>Invoice Number: <span id="updateInvoiceNumberSuper"></span></label>
+                            <input type="number" step="0.01" id="updateKwhSuper" placeholder="kWh Consumed">
+                            <input type="date" id="updateDueDateSuper" placeholder="Due Date">
+                            <select id="updatePaymentStatusSuper">
+                                <option value="">-- Select Status --</option>
+                                <option value="Pending">Pending</option>
+                                <option value="Paid">Paid</option>
+                                <option value="Overdue">Overdue</option>
+                                <option value="Cancelled">Cancelled</option>
+                            </select>
+                            <input type="date" id="updatePaymentDateSuper" placeholder="Payment Date">
+                            <button type="submit" class="btn btn-primary">Update Invoice</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Auditor Dashboard -->
+            <div id="auditorDashboard" class="dashboard" style="display:none;">
+                <h2>Audit Dashboard</h2>
+                <div class="tabs">
+                    <button class="tab-btn active" onclick="showTab('invoices')">Invoices</button>
+                    <button class="tab-btn" onclick="showTab('logs')">Audit Logs</button>
+                    <button class="tab-btn" onclick="showTab('pricing')">Price History</button>
+                    <button class="tab-btn" onclick="showTab('query')">Natural Language Query</button>
+                </div>
+
+                <div id="invoicesTab" class="tab-content active">
+                    <h3>All Invoices</h3>
+                    <div id="auditorInvoices"></div>
+                </div>
+
+                <div id="logsTab" class="tab-content">
+                    <h3>Audit Logs</h3>
+                    <div id="auditLogs"></div>
+                </div>
+
+                <div id="pricingTab" class="tab-content">
+                    <h3>Price Change History</h3>
+                    <div id="pricingHistory"></div>
+                </div>
+
+                <div id="queryTab" class="tab-content">
+                    <h3>Ask a Question</h3>
+                    <form id="nlQueryForm">
+                        <textarea id="nlQuery" rows="3" placeholder="e.g., How many paid invoices this month?" required></textarea>
+                        <button type="submit" class="btn btn-primary">Ask Question</button>
+                    </form>
+                    <div id="queryResults"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>

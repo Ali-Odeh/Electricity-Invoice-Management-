@@ -6,6 +6,8 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
 
@@ -25,7 +27,6 @@ public class User {
 
     @ManyToOne
     @JoinColumn(name = "provider_id")
-    @JsonIgnore
     // @JsonIgnoreProperties({"createdAt", "updatedAt", "isActive"})
     private Provider provider;
 
@@ -33,14 +34,19 @@ public class User {
 
     private String email;
 
+    @Column(columnDefinition = "TEXT")
+    private String password;
+
     @Column(name = "phone_number")
     private String phoneNumber;
 
     private String address;
 
-    @Column(name = "created_at")
+    @CreationTimestamp
+    @Column(name = "created_at", updatable = false)
     private LocalDateTime createdAt;
 
+    @UpdateTimestamp
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 
