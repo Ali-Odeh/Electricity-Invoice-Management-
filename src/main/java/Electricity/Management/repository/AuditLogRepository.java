@@ -12,5 +12,6 @@ public interface AuditLogRepository extends JpaRepository<AuditLog, Integer> {
 
     List<AuditLog> findByInvoice_InvoiceId(Integer invoiceId);
     List<AuditLog> findByInvoice_Provider_ProviderId(Integer providerId);
+    List<AuditLog> findByInvoice_InvoiceNumberAndInvoice_Provider_ProviderId(String invoiceNumber, Integer providerId);
 
 }

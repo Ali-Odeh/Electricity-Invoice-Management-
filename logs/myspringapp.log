@@ -274,3 +274,1331 @@ LIMIT 100;
 2025-10-21 12:09:59 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
 2025-10-21 12:09:59 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
 2025-10-21 12:09:59 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-10-21 12:16:57 [main] INFO  Electricity.Management.EIMApp - Starting EIMApp using Java 21.0.8 with PID 26328 (C:\Users\alool\Desktop\Code's\Training_Harri\Electricity_Invoice_Management\target\classes started by alool in C:\Users\alool\Desktop\Code's\Training_Harri\Electricity_Invoice_Management)
+2025-10-21 12:16:57 [main] INFO  Electricity.Management.EIMApp - No active profile set, falling back to 1 default profile: "default"
+2025-10-21 12:16:57 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-21 12:16:58 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 110 ms. Found 5 JPA repository interfaces.
+2025-10-21 12:16:58 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2025-10-21 12:16:58 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-10-21 12:16:58 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-10-21 12:16:58 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-10-21 12:16:58 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1602 ms
+2025-10-21 12:16:58 [main] DEBUG E.M.security.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2025-10-21 12:16:59 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-21 12:16:59 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.29.Final
+2025-10-21 12:16:59 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-10-21 12:16:59 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-10-21 12:16:59 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-10-21 12:16:59 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@204c5ddf
+2025-10-21 12:16:59 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-10-21 12:16:59 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-10-21 12:16:59 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-10-21 12:16:59 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-10-21 12:17:00 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-10-21 12:17:01 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-10-21 12:17:01 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-10-21 12:17:02 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-10-21 12:17:02 [main] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2025-10-21 12:17:02 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 96cd98de-086c-44f6-a57f-30b91462e1ed
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-10-21 12:17:02 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-10-21 12:17:02 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2025-10-21 12:17:02 [main] INFO  Electricity.Management.EIMApp - Started EIMApp in 6.429 seconds (process running for 7.1)
+2025-10-21 12:17:12 [http-nio-8081-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-21 12:17:12 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-10-21 12:17:12 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-10-21 12:17:12 [http-nio-8081-exec-1] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /
+2025-10-21 12:17:12 [http-nio-8081-exec-1] DEBUG E.M.security.JwtAuthenticationFilter - No JWT token found in request to: /
+2025-10-21 12:17:12 [http-nio-8081-exec-3] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /script.js
+2025-10-21 12:17:12 [http-nio-8081-exec-2] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /style.css
+2025-10-21 12:17:12 [http-nio-8081-exec-3] DEBUG E.M.security.JwtAuthenticationFilter - No JWT token found in request to: /script.js
+2025-10-21 12:17:12 [http-nio-8081-exec-2] DEBUG E.M.security.JwtAuthenticationFilter - No JWT token found in request to: /style.css
+2025-10-21 12:17:13 [http-nio-8081-exec-4] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /favicon.ico
+2025-10-21 12:17:13 [http-nio-8081-exec-4] DEBUG E.M.security.JwtAuthenticationFilter - No JWT token found in request to: /favicon.ico
+2025-10-21 12:17:19 [http-nio-8081-exec-5] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: POST /api/auth/login
+2025-10-21 12:17:19 [http-nio-8081-exec-5] DEBUG E.M.security.JwtAuthenticationFilter - No JWT token found in request to: /api/auth/login
+2025-10-21 12:17:20 [http-nio-8081-exec-5] INFO  E.Management.service.AuthService - Login attempt for user: layla.auditor@jec.ps
+2025-10-21 12:17:20 [http-nio-8081-exec-5] ERROR E.M.exception.GlobalExceptionHandler - Bad request: Invalid email or password
+2025-10-21 12:17:24 [http-nio-8081-exec-8] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: POST /api/auth/login
+2025-10-21 12:17:24 [http-nio-8081-exec-8] DEBUG E.M.security.JwtAuthenticationFilter - No JWT token found in request to: /api/auth/login
+2025-10-21 12:17:24 [http-nio-8081-exec-8] INFO  E.Management.service.AuthService - Login attempt for user: layla.auditor@jec.ps
+2025-10-21 12:17:24 [http-nio-8081-exec-8] INFO  E.Management.service.AuthService - User layla.auditor@jec.ps logged in successfully with role Auditor
+2025-10-21 12:17:24 [http-nio-8081-exec-7] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /api/audit/invoices
+2025-10-21 12:17:24 [http-nio-8081-exec-7] DEBUG E.M.security.JwtAuthenticationFilter - JWT token found in Authorization header
+2025-10-21 12:17:24 [http-nio-8081-exec-7] DEBUG E.M.security.JwtAuthenticationFilter - Extracted username: layla.auditor@jec.ps
+2025-10-21 12:17:24 [http-nio-8081-exec-7] DEBUG E.M.security.JwtAuthenticationFilter - Token validated successfully for user: layla.auditor@jec.ps with role: Auditor
+2025-10-21 12:17:24 [http-nio-8081-exec-7] INFO  E.Management.service.AuditService - Auditor 10 fetching all invoices
+2025-10-21 12:17:26 [http-nio-8081-exec-6] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /api/audit/logs
+2025-10-21 12:17:26 [http-nio-8081-exec-6] DEBUG E.M.security.JwtAuthenticationFilter - JWT token found in Authorization header
+2025-10-21 12:17:26 [http-nio-8081-exec-6] DEBUG E.M.security.JwtAuthenticationFilter - Extracted username: layla.auditor@jec.ps
+2025-10-21 12:17:26 [http-nio-8081-exec-6] DEBUG E.M.security.JwtAuthenticationFilter - Token validated successfully for user: layla.auditor@jec.ps with role: Auditor
+2025-10-21 12:17:26 [http-nio-8081-exec-6] INFO  E.Management.service.AuditService - Auditor 10 fetching all audit logs
+2025-10-21 12:29:33 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-10-21 12:29:33 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-10-21 12:29:35 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-10-21 12:29:35 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-10-21 12:29:35 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-10-21 12:29:41 [main] INFO  Electricity.Management.EIMApp - Starting EIMApp using Java 21.0.8 with PID 27224 (C:\Users\alool\Desktop\Code's\Training_Harri\Electricity_Invoice_Management\target\classes started by alool in C:\Users\alool\Desktop\Code's\Training_Harri\Electricity_Invoice_Management)
+2025-10-21 12:29:41 [main] INFO  Electricity.Management.EIMApp - No active profile set, falling back to 1 default profile: "default"
+2025-10-21 12:29:42 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-21 12:29:42 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 117 ms. Found 5 JPA repository interfaces.
+2025-10-21 12:29:43 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2025-10-21 12:29:43 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-10-21 12:29:43 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-10-21 12:29:43 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-10-21 12:29:43 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1438 ms
+2025-10-21 12:29:43 [main] DEBUG E.M.security.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2025-10-21 12:29:43 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-21 12:29:43 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.29.Final
+2025-10-21 12:29:43 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-10-21 12:29:43 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-10-21 12:29:43 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-10-21 12:29:44 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@d5e3f55
+2025-10-21 12:29:44 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-10-21 12:29:44 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-10-21 12:29:44 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-10-21 12:29:44 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-10-21 12:29:45 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-10-21 12:29:45 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-10-21 12:29:45 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-10-21 12:29:46 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-10-21 12:29:46 [main] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2025-10-21 12:29:46 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 673400d0-b4e8-4c66-9e9e-97b5534d976d
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-10-21 12:29:46 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-10-21 12:29:47 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2025-10-21 12:29:47 [main] INFO  Electricity.Management.EIMApp - Started EIMApp in 5.848 seconds (process running for 6.555)
+2025-10-21 12:29:54 [http-nio-8081-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-21 12:29:54 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-10-21 12:29:54 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-10-21 12:29:54 [http-nio-8081-exec-1] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /
+2025-10-21 12:29:54 [http-nio-8081-exec-1] DEBUG E.M.security.JwtAuthenticationFilter - No JWT token found in request to: /
+2025-10-21 12:29:54 [http-nio-8081-exec-2] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /script.js
+2025-10-21 12:29:54 [http-nio-8081-exec-5] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /style.css
+2025-10-21 12:29:54 [http-nio-8081-exec-2] DEBUG E.M.security.JwtAuthenticationFilter - No JWT token found in request to: /script.js
+2025-10-21 12:29:54 [http-nio-8081-exec-5] DEBUG E.M.security.JwtAuthenticationFilter - No JWT token found in request to: /style.css
+2025-10-21 12:29:54 [http-nio-8081-exec-3] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: HEAD /api/audit/invoices
+2025-10-21 12:29:54 [http-nio-8081-exec-3] DEBUG E.M.security.JwtAuthenticationFilter - JWT token found in Authorization header
+2025-10-21 12:29:54 [http-nio-8081-exec-4] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /favicon.ico
+2025-10-21 12:29:54 [http-nio-8081-exec-4] DEBUG E.M.security.JwtAuthenticationFilter - No JWT token found in request to: /favicon.ico
+2025-10-21 12:29:54 [http-nio-8081-exec-3] DEBUG E.M.security.JwtAuthenticationFilter - Extracted username: layla.auditor@jec.ps
+2025-10-21 12:29:54 [http-nio-8081-exec-3] DEBUG E.M.security.JwtAuthenticationFilter - Token validated successfully for user: layla.auditor@jec.ps with role: Auditor
+2025-10-21 12:29:54 [http-nio-8081-exec-3] INFO  E.Management.service.AuditService - Auditor 10 fetching all invoices
+2025-10-21 12:29:54 [http-nio-8081-exec-7] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /api/audit/invoices
+2025-10-21 12:29:54 [http-nio-8081-exec-7] DEBUG E.M.security.JwtAuthenticationFilter - JWT token found in Authorization header
+2025-10-21 12:29:54 [http-nio-8081-exec-7] DEBUG E.M.security.JwtAuthenticationFilter - Extracted username: layla.auditor@jec.ps
+2025-10-21 12:29:54 [http-nio-8081-exec-7] DEBUG E.M.security.JwtAuthenticationFilter - Token validated successfully for user: layla.auditor@jec.ps with role: Auditor
+2025-10-21 12:29:54 [http-nio-8081-exec-7] INFO  E.Management.service.AuditService - Auditor 10 fetching all invoices
+2025-10-21 12:29:56 [http-nio-8081-exec-6] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /api/audit/pricing-history
+2025-10-21 12:29:56 [http-nio-8081-exec-6] DEBUG E.M.security.JwtAuthenticationFilter - JWT token found in Authorization header
+2025-10-21 12:29:56 [http-nio-8081-exec-6] DEBUG E.M.security.JwtAuthenticationFilter - Extracted username: layla.auditor@jec.ps
+2025-10-21 12:29:56 [http-nio-8081-exec-6] DEBUG E.M.security.JwtAuthenticationFilter - Token validated successfully for user: layla.auditor@jec.ps with role: Auditor
+2025-10-21 12:29:56 [http-nio-8081-exec-6] INFO  E.Management.service.AuditService - Auditor 10 fetching pricing history
+2025-10-21 12:30:38 [http-nio-8081-exec-8] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /api/audit/logs/search
+2025-10-21 12:30:38 [http-nio-8081-exec-8] DEBUG E.M.security.JwtAuthenticationFilter - JWT token found in Authorization header
+2025-10-21 12:30:38 [http-nio-8081-exec-8] DEBUG E.M.security.JwtAuthenticationFilter - Extracted username: layla.auditor@jec.ps
+2025-10-21 12:30:38 [http-nio-8081-exec-8] DEBUG E.M.security.JwtAuthenticationFilter - Token validated successfully for user: layla.auditor@jec.ps with role: Auditor
+2025-10-21 12:30:38 [http-nio-8081-exec-8] INFO  E.Management.service.AuditService - Auditor 10 searching audit logs for invoice number: INV-1-20251020115448
+2025-10-21 12:31:22 [http-nio-8081-exec-10] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /api/audit/logs/search
+2025-10-21 12:31:22 [http-nio-8081-exec-10] DEBUG E.M.security.JwtAuthenticationFilter - JWT token found in Authorization header
+2025-10-21 12:31:22 [http-nio-8081-exec-10] DEBUG E.M.security.JwtAuthenticationFilter - Extracted username: layla.auditor@jec.ps
+2025-10-21 12:31:22 [http-nio-8081-exec-10] DEBUG E.M.security.JwtAuthenticationFilter - Token validated successfully for user: layla.auditor@jec.ps with role: Auditor
+2025-10-21 12:31:22 [http-nio-8081-exec-10] INFO  E.Management.service.AuditService - Auditor 10 searching audit logs for invoice number: INV-1-20251012222041
+2025-10-21 12:31:33 [http-nio-8081-exec-1] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /api/audit/logs/search
+2025-10-21 12:31:33 [http-nio-8081-exec-1] DEBUG E.M.security.JwtAuthenticationFilter - JWT token found in Authorization header
+2025-10-21 12:31:33 [http-nio-8081-exec-1] DEBUG E.M.security.JwtAuthenticationFilter - Extracted username: layla.auditor@jec.ps
+2025-10-21 12:31:33 [http-nio-8081-exec-1] DEBUG E.M.security.JwtAuthenticationFilter - Token validated successfully for user: layla.auditor@jec.ps with role: Auditor
+2025-10-21 12:31:33 [http-nio-8081-exec-1] INFO  E.Management.service.AuditService - Auditor 10 searching audit logs for invoice number: INV-1-20251012223252
+2025-10-21 12:31:44 [http-nio-8081-exec-5] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /api/audit/logs/search
+2025-10-21 12:31:44 [http-nio-8081-exec-5] DEBUG E.M.security.JwtAuthenticationFilter - JWT token found in Authorization header
+2025-10-21 12:31:44 [http-nio-8081-exec-5] DEBUG E.M.security.JwtAuthenticationFilter - Extracted username: layla.auditor@jec.ps
+2025-10-21 12:31:44 [http-nio-8081-exec-5] DEBUG E.M.security.JwtAuthenticationFilter - Token validated successfully for user: layla.auditor@jec.ps with role: Auditor
+2025-10-21 12:31:44 [http-nio-8081-exec-5] INFO  E.Management.service.AuditService - Auditor 10 searching audit logs for invoice number: INV-1-20251013122748
+2025-10-21 12:32:01 [http-nio-8081-exec-2] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /api/audit/logs/search
+2025-10-21 12:32:01 [http-nio-8081-exec-2] DEBUG E.M.security.JwtAuthenticationFilter - JWT token found in Authorization header
+2025-10-21 12:32:01 [http-nio-8081-exec-2] DEBUG E.M.security.JwtAuthenticationFilter - Extracted username: layla.auditor@jec.ps
+2025-10-21 12:32:01 [http-nio-8081-exec-2] DEBUG E.M.security.JwtAuthenticationFilter - Token validated successfully for user: layla.auditor@jec.ps with role: Auditor
+2025-10-21 12:32:01 [http-nio-8081-exec-2] INFO  E.Management.service.AuditService - Auditor 10 searching audit logs for invoice number: INV-1-20251013122748
+2025-10-21 12:32:25 [http-nio-8081-exec-4] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /api/audit/logs/search
+2025-10-21 12:32:25 [http-nio-8081-exec-4] DEBUG E.M.security.JwtAuthenticationFilter - JWT token found in Authorization header
+2025-10-21 12:32:25 [http-nio-8081-exec-4] DEBUG E.M.security.JwtAuthenticationFilter - Extracted username: layla.auditor@jec.ps
+2025-10-21 12:32:25 [http-nio-8081-exec-4] DEBUG E.M.security.JwtAuthenticationFilter - Token validated successfully for user: layla.auditor@jec.ps with role: Auditor
+2025-10-21 12:32:25 [http-nio-8081-exec-4] INFO  E.Management.service.AuditService - Auditor 10 searching audit logs for invoice number: INV-1-20251013122748
+2025-10-21 12:32:27 [http-nio-8081-exec-3] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /api/audit/logs/search
+2025-10-21 12:32:27 [http-nio-8081-exec-3] DEBUG E.M.security.JwtAuthenticationFilter - JWT token found in Authorization header
+2025-10-21 12:32:27 [http-nio-8081-exec-3] DEBUG E.M.security.JwtAuthenticationFilter - Extracted username: layla.auditor@jec.ps
+2025-10-21 12:32:27 [http-nio-8081-exec-3] DEBUG E.M.security.JwtAuthenticationFilter - Token validated successfully for user: layla.auditor@jec.ps with role: Auditor
+2025-10-21 12:32:27 [http-nio-8081-exec-3] INFO  E.Management.service.AuditService - Auditor 10 searching audit logs for invoice number: INV-1-20251013122748
+2025-10-21 12:32:50 [http-nio-8081-exec-7] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /api/audit/pricing-history
+2025-10-21 12:32:50 [http-nio-8081-exec-7] DEBUG E.M.security.JwtAuthenticationFilter - JWT token found in Authorization header
+2025-10-21 12:32:50 [http-nio-8081-exec-7] DEBUG E.M.security.JwtAuthenticationFilter - Extracted username: layla.auditor@jec.ps
+2025-10-21 12:32:50 [http-nio-8081-exec-7] DEBUG E.M.security.JwtAuthenticationFilter - Token validated successfully for user: layla.auditor@jec.ps with role: Auditor
+2025-10-21 12:32:50 [http-nio-8081-exec-7] INFO  E.Management.service.AuditService - Auditor 10 fetching pricing history
+2025-10-21 12:32:51 [http-nio-8081-exec-6] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /api/audit/pricing-history
+2025-10-21 12:32:51 [http-nio-8081-exec-6] DEBUG E.M.security.JwtAuthenticationFilter - JWT token found in Authorization header
+2025-10-21 12:32:51 [http-nio-8081-exec-6] DEBUG E.M.security.JwtAuthenticationFilter - Extracted username: layla.auditor@jec.ps
+2025-10-21 12:32:51 [http-nio-8081-exec-6] DEBUG E.M.security.JwtAuthenticationFilter - Token validated successfully for user: layla.auditor@jec.ps with role: Auditor
+2025-10-21 12:32:51 [http-nio-8081-exec-6] INFO  E.Management.service.AuditService - Auditor 10 fetching pricing history
+2025-10-21 12:33:31 [http-nio-8081-exec-8] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /api/audit/logs/search
+2025-10-21 12:33:31 [http-nio-8081-exec-8] DEBUG E.M.security.JwtAuthenticationFilter - JWT token found in Authorization header
+2025-10-21 12:33:31 [http-nio-8081-exec-8] DEBUG E.M.security.JwtAuthenticationFilter - Extracted username: layla.auditor@jec.ps
+2025-10-21 12:33:31 [http-nio-8081-exec-8] DEBUG E.M.security.JwtAuthenticationFilter - Token validated successfully for user: layla.auditor@jec.ps with role: Auditor
+2025-10-21 12:33:31 [http-nio-8081-exec-8] INFO  E.Management.service.AuditService - Auditor 10 searching audit logs for invoice number: INV-1-20251013122748
+2025-10-21 12:33:50 [http-nio-8081-exec-9] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /api/audit/logs/search
+2025-10-21 12:33:50 [http-nio-8081-exec-9] DEBUG E.M.security.JwtAuthenticationFilter - JWT token found in Authorization header
+2025-10-21 12:33:50 [http-nio-8081-exec-9] DEBUG E.M.security.JwtAuthenticationFilter - Extracted username: layla.auditor@jec.ps
+2025-10-21 12:33:50 [http-nio-8081-exec-9] DEBUG E.M.security.JwtAuthenticationFilter - Token validated successfully for user: layla.auditor@jec.ps with role: Auditor
+2025-10-21 12:33:50 [http-nio-8081-exec-9] INFO  E.Management.service.AuditService - Auditor 10 searching audit logs for invoice number: INV-1-20251013122748
+2025-10-21 12:34:05 [http-nio-8081-exec-10] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /api/audit/logs/search
+2025-10-21 12:34:05 [http-nio-8081-exec-10] DEBUG E.M.security.JwtAuthenticationFilter - JWT token found in Authorization header
+2025-10-21 12:34:05 [http-nio-8081-exec-10] DEBUG E.M.security.JwtAuthenticationFilter - Extracted username: layla.auditor@jec.ps
+2025-10-21 12:34:05 [http-nio-8081-exec-10] DEBUG E.M.security.JwtAuthenticationFilter - Token validated successfully for user: layla.auditor@jec.ps with role: Auditor
+2025-10-21 12:34:05 [http-nio-8081-exec-10] INFO  E.Management.service.AuditService - Auditor 10 searching audit logs for invoice number: INV-1-20251013122748
+2025-10-21 12:39:54 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-10-21 12:39:54 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-10-21 12:39:56 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-10-21 12:39:56 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-10-21 12:39:56 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-10-21 12:40:00 [main] INFO  Electricity.Management.EIMApp - Starting EIMApp using Java 21.0.8 with PID 10212 (C:\Users\alool\Desktop\Code's\Training_Harri\Electricity_Invoice_Management\target\classes started by alool in C:\Users\alool\Desktop\Code's\Training_Harri\Electricity_Invoice_Management)
+2025-10-21 12:40:00 [main] INFO  Electricity.Management.EIMApp - No active profile set, falling back to 1 default profile: "default"
+2025-10-21 12:40:01 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-21 12:40:01 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 165 ms. Found 5 JPA repository interfaces.
+2025-10-21 12:40:02 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2025-10-21 12:40:02 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-10-21 12:40:02 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-10-21 12:40:02 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-10-21 12:40:02 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1521 ms
+2025-10-21 12:40:02 [main] DEBUG E.M.security.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2025-10-21 12:40:02 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-21 12:40:02 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.29.Final
+2025-10-21 12:40:02 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-10-21 12:40:02 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-10-21 12:40:02 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-10-21 12:40:03 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@38923cfe
+2025-10-21 12:40:03 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-10-21 12:40:03 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-10-21 12:40:03 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-10-21 12:40:03 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-10-21 12:40:03 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-10-21 12:40:03 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-10-21 12:40:04 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-10-21 12:40:05 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-10-21 12:40:05 [main] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2025-10-21 12:40:05 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: df02855c-b7a1-45e6-b959-7503812bb972
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-10-21 12:40:05 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-10-21 12:40:05 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2025-10-21 12:40:05 [main] INFO  Electricity.Management.EIMApp - Started EIMApp in 5.232 seconds (process running for 5.945)
+2025-10-21 12:40:25 [http-nio-8081-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-21 12:40:25 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-10-21 12:40:25 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-10-21 12:40:25 [http-nio-8081-exec-1] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /
+2025-10-21 12:40:25 [http-nio-8081-exec-1] DEBUG E.M.security.JwtAuthenticationFilter - No JWT token found in request to: /
+2025-10-21 12:40:25 [http-nio-8081-exec-6] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /style.css
+2025-10-21 12:40:25 [http-nio-8081-exec-6] DEBUG E.M.security.JwtAuthenticationFilter - No JWT token found in request to: /style.css
+2025-10-21 12:40:25 [http-nio-8081-exec-8] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /script.js
+2025-10-21 12:40:25 [http-nio-8081-exec-8] DEBUG E.M.security.JwtAuthenticationFilter - No JWT token found in request to: /script.js
+2025-10-21 12:40:25 [http-nio-8081-exec-4] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: HEAD /api/audit/invoices
+2025-10-21 12:40:25 [http-nio-8081-exec-4] DEBUG E.M.security.JwtAuthenticationFilter - JWT token found in Authorization header
+2025-10-21 12:40:25 [http-nio-8081-exec-3] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /favicon.ico
+2025-10-21 12:40:25 [http-nio-8081-exec-3] DEBUG E.M.security.JwtAuthenticationFilter - No JWT token found in request to: /favicon.ico
+2025-10-21 12:40:25 [http-nio-8081-exec-4] DEBUG E.M.security.JwtAuthenticationFilter - Extracted username: layla.auditor@jec.ps
+2025-10-21 12:40:25 [http-nio-8081-exec-4] DEBUG E.M.security.JwtAuthenticationFilter - Token validated successfully for user: layla.auditor@jec.ps with role: Auditor
+2025-10-21 12:40:25 [http-nio-8081-exec-4] INFO  E.Management.service.AuditService - Auditor 10 fetching all invoices
+2025-10-21 12:40:26 [http-nio-8081-exec-5] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /api/audit/invoices
+2025-10-21 12:40:26 [http-nio-8081-exec-5] DEBUG E.M.security.JwtAuthenticationFilter - JWT token found in Authorization header
+2025-10-21 12:40:26 [http-nio-8081-exec-5] DEBUG E.M.security.JwtAuthenticationFilter - Extracted username: layla.auditor@jec.ps
+2025-10-21 12:40:26 [http-nio-8081-exec-5] DEBUG E.M.security.JwtAuthenticationFilter - Token validated successfully for user: layla.auditor@jec.ps with role: Auditor
+2025-10-21 12:40:26 [http-nio-8081-exec-5] INFO  E.Management.service.AuditService - Auditor 10 fetching all invoices
+2025-10-21 12:40:43 [http-nio-8081-exec-7] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /api/audit/invoices/search
+2025-10-21 12:40:43 [http-nio-8081-exec-7] DEBUG E.M.security.JwtAuthenticationFilter - JWT token found in Authorization header
+2025-10-21 12:40:43 [http-nio-8081-exec-7] DEBUG E.M.security.JwtAuthenticationFilter - Extracted username: layla.auditor@jec.ps
+2025-10-21 12:40:43 [http-nio-8081-exec-7] DEBUG E.M.security.JwtAuthenticationFilter - Token validated successfully for user: layla.auditor@jec.ps with role: Auditor
+2025-10-21 12:40:43 [http-nio-8081-exec-7] INFO  E.Management.service.AuditService - Auditor 10 searching for invoice number: INV-1-20251020115448
+2025-10-21 12:40:46 [http-nio-8081-exec-2] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /api/audit/invoices
+2025-10-21 12:40:46 [http-nio-8081-exec-2] DEBUG E.M.security.JwtAuthenticationFilter - JWT token found in Authorization header
+2025-10-21 12:40:46 [http-nio-8081-exec-2] DEBUG E.M.security.JwtAuthenticationFilter - Extracted username: layla.auditor@jec.ps
+2025-10-21 12:40:46 [http-nio-8081-exec-2] DEBUG E.M.security.JwtAuthenticationFilter - Token validated successfully for user: layla.auditor@jec.ps with role: Auditor
+2025-10-21 12:40:46 [http-nio-8081-exec-2] INFO  E.Management.service.AuditService - Auditor 10 fetching all invoices
+2025-10-21 12:41:01 [http-nio-8081-exec-9] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /api/audit/invoices/search
+2025-10-21 12:41:01 [http-nio-8081-exec-9] DEBUG E.M.security.JwtAuthenticationFilter - JWT token found in Authorization header
+2025-10-21 12:41:01 [http-nio-8081-exec-9] DEBUG E.M.security.JwtAuthenticationFilter - Extracted username: layla.auditor@jec.ps
+2025-10-21 12:41:01 [http-nio-8081-exec-9] DEBUG E.M.security.JwtAuthenticationFilter - Token validated successfully for user: layla.auditor@jec.ps with role: Auditor
+2025-10-21 12:41:01 [http-nio-8081-exec-9] INFO  E.Management.service.AuditService - Auditor 10 searching for invoice number: INV-1-20251020121532
+2025-10-21 12:41:03 [http-nio-8081-exec-10] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /api/audit/invoices
+2025-10-21 12:41:03 [http-nio-8081-exec-10] DEBUG E.M.security.JwtAuthenticationFilter - JWT token found in Authorization header
+2025-10-21 12:41:03 [http-nio-8081-exec-10] DEBUG E.M.security.JwtAuthenticationFilter - Extracted username: layla.auditor@jec.ps
+2025-10-21 12:41:03 [http-nio-8081-exec-10] DEBUG E.M.security.JwtAuthenticationFilter - Token validated successfully for user: layla.auditor@jec.ps with role: Auditor
+2025-10-21 12:41:03 [http-nio-8081-exec-10] INFO  E.Management.service.AuditService - Auditor 10 fetching all invoices
+2025-10-21 12:41:12 [http-nio-8081-exec-1] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /api/audit/invoices/search
+2025-10-21 12:41:12 [http-nio-8081-exec-1] DEBUG E.M.security.JwtAuthenticationFilter - JWT token found in Authorization header
+2025-10-21 12:41:12 [http-nio-8081-exec-1] DEBUG E.M.security.JwtAuthenticationFilter - Extracted username: layla.auditor@jec.ps
+2025-10-21 12:41:12 [http-nio-8081-exec-1] DEBUG E.M.security.JwtAuthenticationFilter - Token validated successfully for user: layla.auditor@jec.ps with role: Auditor
+2025-10-21 12:41:12 [http-nio-8081-exec-1] INFO  E.Management.service.AuditService - Auditor 10 searching for invoice number: INV-1-20251021111623
+2025-10-21 12:41:13 [http-nio-8081-exec-6] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /api/audit/invoices
+2025-10-21 12:41:13 [http-nio-8081-exec-6] DEBUG E.M.security.JwtAuthenticationFilter - JWT token found in Authorization header
+2025-10-21 12:41:13 [http-nio-8081-exec-6] DEBUG E.M.security.JwtAuthenticationFilter - Extracted username: layla.auditor@jec.ps
+2025-10-21 12:41:13 [http-nio-8081-exec-6] DEBUG E.M.security.JwtAuthenticationFilter - Token validated successfully for user: layla.auditor@jec.ps with role: Auditor
+2025-10-21 12:41:13 [http-nio-8081-exec-6] INFO  E.Management.service.AuditService - Auditor 10 fetching all invoices
+2025-10-21 12:41:19 [http-nio-8081-exec-8] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /api/audit/invoices/search
+2025-10-21 12:41:19 [http-nio-8081-exec-8] DEBUG E.M.security.JwtAuthenticationFilter - JWT token found in Authorization header
+2025-10-21 12:41:19 [http-nio-8081-exec-8] DEBUG E.M.security.JwtAuthenticationFilter - Extracted username: layla.auditor@jec.ps
+2025-10-21 12:41:19 [http-nio-8081-exec-8] DEBUG E.M.security.JwtAuthenticationFilter - Token validated successfully for user: layla.auditor@jec.ps with role: Auditor
+2025-10-21 12:41:19 [http-nio-8081-exec-8] INFO  E.Management.service.AuditService - Auditor 10 searching for invoice number: INV-1-20251012224015
+2025-10-21 12:41:22 [http-nio-8081-exec-3] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /api/audit/invoices
+2025-10-21 12:41:22 [http-nio-8081-exec-3] DEBUG E.M.security.JwtAuthenticationFilter - JWT token found in Authorization header
+2025-10-21 12:41:22 [http-nio-8081-exec-3] DEBUG E.M.security.JwtAuthenticationFilter - Extracted username: layla.auditor@jec.ps
+2025-10-21 12:41:22 [http-nio-8081-exec-3] DEBUG E.M.security.JwtAuthenticationFilter - Token validated successfully for user: layla.auditor@jec.ps with role: Auditor
+2025-10-21 12:41:22 [http-nio-8081-exec-3] INFO  E.Management.service.AuditService - Auditor 10 fetching all invoices
+2025-10-21 12:41:25 [http-nio-8081-exec-5] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /api/audit/invoices/search
+2025-10-21 12:41:25 [http-nio-8081-exec-5] DEBUG E.M.security.JwtAuthenticationFilter - JWT token found in Authorization header
+2025-10-21 12:41:25 [http-nio-8081-exec-5] DEBUG E.M.security.JwtAuthenticationFilter - Extracted username: layla.auditor@jec.ps
+2025-10-21 12:41:25 [http-nio-8081-exec-5] DEBUG E.M.security.JwtAuthenticationFilter - Token validated successfully for user: layla.auditor@jec.ps with role: Auditor
+2025-10-21 12:41:25 [http-nio-8081-exec-5] INFO  E.Management.service.AuditService - Auditor 10 searching for invoice number: INV-1-20251012222041
+2025-10-21 12:41:30 [http-nio-8081-exec-7] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /api/audit/invoices
+2025-10-21 12:41:30 [http-nio-8081-exec-7] DEBUG E.M.security.JwtAuthenticationFilter - JWT token found in Authorization header
+2025-10-21 12:41:30 [http-nio-8081-exec-7] DEBUG E.M.security.JwtAuthenticationFilter - Extracted username: layla.auditor@jec.ps
+2025-10-21 12:41:30 [http-nio-8081-exec-7] DEBUG E.M.security.JwtAuthenticationFilter - Token validated successfully for user: layla.auditor@jec.ps with role: Auditor
+2025-10-21 12:41:30 [http-nio-8081-exec-7] INFO  E.Management.service.AuditService - Auditor 10 fetching all invoices
+2025-10-21 12:46:25 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-10-21 12:46:25 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-10-21 12:46:27 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-10-21 12:46:27 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-10-21 12:46:27 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-10-21 12:46:30 [main] INFO  Electricity.Management.EIMApp - Starting EIMApp using Java 21.0.8 with PID 13708 (C:\Users\alool\Desktop\Code's\Training_Harri\Electricity_Invoice_Management\target\classes started by alool in C:\Users\alool\Desktop\Code's\Training_Harri\Electricity_Invoice_Management)
+2025-10-21 12:46:30 [main] INFO  Electricity.Management.EIMApp - No active profile set, falling back to 1 default profile: "default"
+2025-10-21 12:46:31 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-21 12:46:31 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 109 ms. Found 5 JPA repository interfaces.
+2025-10-21 12:46:32 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2025-10-21 12:46:32 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-10-21 12:46:32 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-10-21 12:46:32 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-10-21 12:46:32 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1468 ms
+2025-10-21 12:46:32 [main] DEBUG E.M.security.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2025-10-21 12:46:32 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-21 12:46:32 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.29.Final
+2025-10-21 12:46:32 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-10-21 12:46:32 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-10-21 12:46:32 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-10-21 12:46:33 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@d5e3f55
+2025-10-21 12:46:33 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-10-21 12:46:33 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-10-21 12:46:33 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-10-21 12:46:33 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-10-21 12:46:34 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-10-21 12:46:34 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-10-21 12:46:34 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-10-21 12:46:35 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-10-21 12:46:35 [main] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2025-10-21 12:46:35 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 22967e03-f71f-4891-b033-a3e4eb7abd1e
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-10-21 12:46:35 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-10-21 12:46:35 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2025-10-21 12:46:35 [main] INFO  Electricity.Management.EIMApp - Started EIMApp in 5.443 seconds (process running for 6.35)
+2025-10-21 12:46:51 [http-nio-8081-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-21 12:46:51 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-10-21 12:46:51 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-10-21 12:46:51 [http-nio-8081-exec-1] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /
+2025-10-21 12:46:51 [http-nio-8081-exec-1] DEBUG E.M.security.JwtAuthenticationFilter - No JWT token found in request to: /
+2025-10-21 12:46:51 [http-nio-8081-exec-6] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /style.css
+2025-10-21 12:46:51 [http-nio-8081-exec-6] DEBUG E.M.security.JwtAuthenticationFilter - No JWT token found in request to: /style.css
+2025-10-21 12:46:51 [http-nio-8081-exec-10] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /script.js
+2025-10-21 12:46:51 [http-nio-8081-exec-10] DEBUG E.M.security.JwtAuthenticationFilter - No JWT token found in request to: /script.js
+2025-10-21 12:46:52 [http-nio-8081-exec-5] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: HEAD /api/audit/invoices
+2025-10-21 12:46:52 [http-nio-8081-exec-5] DEBUG E.M.security.JwtAuthenticationFilter - JWT token found in Authorization header
+2025-10-21 12:46:52 [http-nio-8081-exec-4] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /favicon.ico
+2025-10-21 12:46:52 [http-nio-8081-exec-4] DEBUG E.M.security.JwtAuthenticationFilter - No JWT token found in request to: /favicon.ico
+2025-10-21 12:46:52 [http-nio-8081-exec-5] DEBUG E.M.security.JwtAuthenticationFilter - Extracted username: layla.auditor@jec.ps
+2025-10-21 12:46:52 [http-nio-8081-exec-5] DEBUG E.M.security.JwtAuthenticationFilter - Token validated successfully for user: layla.auditor@jec.ps with role: Auditor
+2025-10-21 12:46:52 [http-nio-8081-exec-5] INFO  E.Management.service.AuditService - Auditor 10 fetching all invoices
+2025-10-21 12:46:52 [http-nio-8081-exec-7] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /api/audit/invoices
+2025-10-21 12:46:52 [http-nio-8081-exec-7] DEBUG E.M.security.JwtAuthenticationFilter - JWT token found in Authorization header
+2025-10-21 12:46:52 [http-nio-8081-exec-7] DEBUG E.M.security.JwtAuthenticationFilter - Extracted username: layla.auditor@jec.ps
+2025-10-21 12:46:52 [http-nio-8081-exec-7] DEBUG E.M.security.JwtAuthenticationFilter - Token validated successfully for user: layla.auditor@jec.ps with role: Auditor
+2025-10-21 12:46:52 [http-nio-8081-exec-7] INFO  E.Management.service.AuditService - Auditor 10 fetching all invoices
+2025-10-21 12:47:41 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-10-21 12:47:41 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-10-21 12:47:43 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-10-21 12:47:43 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-10-21 12:47:43 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-10-21 12:47:46 [main] INFO  Electricity.Management.EIMApp - Starting EIMApp using Java 21.0.8 with PID 24432 (C:\Users\alool\Desktop\Code's\Training_Harri\Electricity_Invoice_Management\target\classes started by alool in C:\Users\alool\Desktop\Code's\Training_Harri\Electricity_Invoice_Management)
+2025-10-21 12:47:46 [main] INFO  Electricity.Management.EIMApp - No active profile set, falling back to 1 default profile: "default"
+2025-10-21 12:47:47 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-21 12:47:47 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 122 ms. Found 5 JPA repository interfaces.
+2025-10-21 12:47:48 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2025-10-21 12:47:48 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-10-21 12:47:48 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-10-21 12:47:48 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-10-21 12:47:48 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1557 ms
+2025-10-21 12:47:48 [main] DEBUG E.M.security.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2025-10-21 12:47:48 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-21 12:47:48 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.29.Final
+2025-10-21 12:47:48 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-10-21 12:47:48 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-10-21 12:47:48 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-10-21 12:47:49 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@19d76106
+2025-10-21 12:47:49 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-10-21 12:47:49 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-10-21 12:47:49 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-10-21 12:47:49 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-10-21 12:47:50 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-10-21 12:47:50 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-10-21 12:47:50 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-10-21 12:47:51 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-10-21 12:47:51 [main] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2025-10-21 12:47:51 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 655141fa-a106-4c13-9b18-bc38774b2e9b
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-10-21 12:47:51 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-10-21 12:47:51 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2025-10-21 12:47:51 [main] INFO  Electricity.Management.EIMApp - Started EIMApp in 5.505 seconds (process running for 6.28)
+2025-10-21 12:47:58 [http-nio-8081-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-21 12:47:58 [http-nio-8081-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-10-21 12:47:58 [http-nio-8081-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-10-21 12:47:58 [http-nio-8081-exec-2] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /
+2025-10-21 12:47:58 [http-nio-8081-exec-2] DEBUG E.M.security.JwtAuthenticationFilter - No JWT token found in request to: /
+2025-10-21 12:47:58 [http-nio-8081-exec-1] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /style.css
+2025-10-21 12:47:58 [http-nio-8081-exec-1] DEBUG E.M.security.JwtAuthenticationFilter - No JWT token found in request to: /style.css
+2025-10-21 12:47:58 [http-nio-8081-exec-4] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /script.js
+2025-10-21 12:47:58 [http-nio-8081-exec-4] DEBUG E.M.security.JwtAuthenticationFilter - No JWT token found in request to: /script.js
+2025-10-21 12:47:58 [http-nio-8081-exec-3] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: HEAD /api/audit/invoices
+2025-10-21 12:47:58 [http-nio-8081-exec-3] DEBUG E.M.security.JwtAuthenticationFilter - JWT token found in Authorization header
+2025-10-21 12:47:59 [http-nio-8081-exec-5] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /favicon.ico
+2025-10-21 12:47:59 [http-nio-8081-exec-5] DEBUG E.M.security.JwtAuthenticationFilter - No JWT token found in request to: /favicon.ico
+2025-10-21 12:47:59 [http-nio-8081-exec-3] DEBUG E.M.security.JwtAuthenticationFilter - Extracted username: layla.auditor@jec.ps
+2025-10-21 12:47:59 [http-nio-8081-exec-3] DEBUG E.M.security.JwtAuthenticationFilter - Token validated successfully for user: layla.auditor@jec.ps with role: Auditor
+2025-10-21 12:47:59 [http-nio-8081-exec-3] INFO  E.Management.service.AuditService - Auditor 10 fetching all invoices
+2025-10-21 12:47:59 [http-nio-8081-exec-6] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /api/audit/invoices
+2025-10-21 12:47:59 [http-nio-8081-exec-6] DEBUG E.M.security.JwtAuthenticationFilter - JWT token found in Authorization header
+2025-10-21 12:47:59 [http-nio-8081-exec-6] DEBUG E.M.security.JwtAuthenticationFilter - Extracted username: layla.auditor@jec.ps
+2025-10-21 12:47:59 [http-nio-8081-exec-6] DEBUG E.M.security.JwtAuthenticationFilter - Token validated successfully for user: layla.auditor@jec.ps with role: Auditor
+2025-10-21 12:47:59 [http-nio-8081-exec-6] INFO  E.Management.service.AuditService - Auditor 10 fetching all invoices
+2025-10-21 12:48:09 [http-nio-8081-exec-7] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /
+2025-10-21 12:48:09 [http-nio-8081-exec-7] DEBUG E.M.security.JwtAuthenticationFilter - No JWT token found in request to: /
+2025-10-21 12:48:09 [http-nio-8081-exec-9] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /script.js
+2025-10-21 12:48:09 [http-nio-8081-exec-8] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /style.css
+2025-10-21 12:48:09 [http-nio-8081-exec-9] DEBUG E.M.security.JwtAuthenticationFilter - No JWT token found in request to: /script.js
+2025-10-21 12:48:09 [http-nio-8081-exec-8] DEBUG E.M.security.JwtAuthenticationFilter - No JWT token found in request to: /style.css
+2025-10-21 12:48:09 [http-nio-8081-exec-10] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /favicon.ico
+2025-10-21 12:48:09 [http-nio-8081-exec-10] DEBUG E.M.security.JwtAuthenticationFilter - No JWT token found in request to: /favicon.ico
+2025-10-21 12:48:15 [http-nio-8081-exec-2] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: POST /api/auth/login
+2025-10-21 12:48:15 [http-nio-8081-exec-2] DEBUG E.M.security.JwtAuthenticationFilter - No JWT token found in request to: /api/auth/login
+2025-10-21 12:48:15 [http-nio-8081-exec-2] INFO  E.Management.service.AuthService - Login attempt for user: layla.auditor@jec.ps
+2025-10-21 12:48:15 [http-nio-8081-exec-2] INFO  E.Management.service.AuthService - User layla.auditor@jec.ps logged in successfully with role Auditor
+2025-10-21 12:48:15 [http-nio-8081-exec-1] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /api/audit/invoices
+2025-10-21 12:48:15 [http-nio-8081-exec-1] DEBUG E.M.security.JwtAuthenticationFilter - JWT token found in Authorization header
+2025-10-21 12:48:15 [http-nio-8081-exec-1] DEBUG E.M.security.JwtAuthenticationFilter - Extracted username: layla.auditor@jec.ps
+2025-10-21 12:48:15 [http-nio-8081-exec-1] DEBUG E.M.security.JwtAuthenticationFilter - Token validated successfully for user: layla.auditor@jec.ps with role: Auditor
+2025-10-21 12:48:15 [http-nio-8081-exec-1] INFO  E.Management.service.AuditService - Auditor 10 fetching all invoices
+2025-10-21 12:51:13 [http-nio-8081-exec-3] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /
+2025-10-21 12:51:13 [http-nio-8081-exec-3] DEBUG E.M.security.JwtAuthenticationFilter - No JWT token found in request to: /
+2025-10-21 12:51:13 [http-nio-8081-exec-6] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /style.css
+2025-10-21 12:51:13 [http-nio-8081-exec-6] DEBUG E.M.security.JwtAuthenticationFilter - No JWT token found in request to: /style.css
+2025-10-21 12:51:13 [http-nio-8081-exec-7] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /script.js
+2025-10-21 12:51:13 [http-nio-8081-exec-7] DEBUG E.M.security.JwtAuthenticationFilter - No JWT token found in request to: /script.js
+2025-10-21 12:51:13 [http-nio-8081-exec-8] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: HEAD /api/audit/invoices
+2025-10-21 12:51:13 [http-nio-8081-exec-8] DEBUG E.M.security.JwtAuthenticationFilter - JWT token found in Authorization header
+2025-10-21 12:51:13 [http-nio-8081-exec-8] DEBUG E.M.security.JwtAuthenticationFilter - Extracted username: layla.auditor@jec.ps
+2025-10-21 12:51:13 [http-nio-8081-exec-8] DEBUG E.M.security.JwtAuthenticationFilter - Token validated successfully for user: layla.auditor@jec.ps with role: Auditor
+2025-10-21 12:51:13 [http-nio-8081-exec-8] INFO  E.Management.service.AuditService - Auditor 10 fetching all invoices
+2025-10-21 12:51:13 [http-nio-8081-exec-9] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /favicon.ico
+2025-10-21 12:51:13 [http-nio-8081-exec-9] DEBUG E.M.security.JwtAuthenticationFilter - No JWT token found in request to: /favicon.ico
+2025-10-21 12:51:13 [http-nio-8081-exec-10] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /api/audit/invoices
+2025-10-21 12:51:13 [http-nio-8081-exec-10] DEBUG E.M.security.JwtAuthenticationFilter - JWT token found in Authorization header
+2025-10-21 12:51:13 [http-nio-8081-exec-10] DEBUG E.M.security.JwtAuthenticationFilter - Extracted username: layla.auditor@jec.ps
+2025-10-21 12:51:13 [http-nio-8081-exec-10] DEBUG E.M.security.JwtAuthenticationFilter - Token validated successfully for user: layla.auditor@jec.ps with role: Auditor
+2025-10-21 12:51:13 [http-nio-8081-exec-10] INFO  E.Management.service.AuditService - Auditor 10 fetching all invoices
+2025-10-21 12:51:37 [http-nio-8081-exec-2] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /api/audit/logs/search
+2025-10-21 12:51:37 [http-nio-8081-exec-2] DEBUG E.M.security.JwtAuthenticationFilter - JWT token found in Authorization header
+2025-10-21 12:51:37 [http-nio-8081-exec-2] DEBUG E.M.security.JwtAuthenticationFilter - Extracted username: layla.auditor@jec.ps
+2025-10-21 12:51:37 [http-nio-8081-exec-2] DEBUG E.M.security.JwtAuthenticationFilter - Token validated successfully for user: layla.auditor@jec.ps with role: Auditor
+2025-10-21 12:51:37 [http-nio-8081-exec-2] INFO  E.Management.service.AuditService - Auditor 10 searching audit logs for invoice number: INV-1-20251012222041
+2025-10-21 12:51:43 [http-nio-8081-exec-1] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /api/audit/invoices/search
+2025-10-21 12:51:43 [http-nio-8081-exec-1] DEBUG E.M.security.JwtAuthenticationFilter - JWT token found in Authorization header
+2025-10-21 12:51:43 [http-nio-8081-exec-1] DEBUG E.M.security.JwtAuthenticationFilter - Extracted username: layla.auditor@jec.ps
+2025-10-21 12:51:43 [http-nio-8081-exec-1] DEBUG E.M.security.JwtAuthenticationFilter - Token validated successfully for user: layla.auditor@jec.ps with role: Auditor
+2025-10-21 12:51:43 [http-nio-8081-exec-1] INFO  E.Management.service.AuditService - Auditor 10 searching for invoice number: INV-1-20251012222041
+2025-10-21 12:51:47 [http-nio-8081-exec-4] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /api/audit/logs/search
+2025-10-21 12:51:47 [http-nio-8081-exec-4] DEBUG E.M.security.JwtAuthenticationFilter - JWT token found in Authorization header
+2025-10-21 12:51:47 [http-nio-8081-exec-4] DEBUG E.M.security.JwtAuthenticationFilter - Extracted username: layla.auditor@jec.ps
+2025-10-21 12:51:47 [http-nio-8081-exec-4] DEBUG E.M.security.JwtAuthenticationFilter - Token validated successfully for user: layla.auditor@jec.ps with role: Auditor
+2025-10-21 12:51:47 [http-nio-8081-exec-4] INFO  E.Management.service.AuditService - Auditor 10 searching audit logs for invoice number: INV-1-20251012222041
+2025-10-21 12:51:49 [http-nio-8081-exec-5] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /api/audit/logs/search
+2025-10-21 12:51:49 [http-nio-8081-exec-5] DEBUG E.M.security.JwtAuthenticationFilter - JWT token found in Authorization header
+2025-10-21 12:51:49 [http-nio-8081-exec-5] DEBUG E.M.security.JwtAuthenticationFilter - Extracted username: layla.auditor@jec.ps
+2025-10-21 12:51:49 [http-nio-8081-exec-5] DEBUG E.M.security.JwtAuthenticationFilter - Token validated successfully for user: layla.auditor@jec.ps with role: Auditor
+2025-10-21 12:51:49 [http-nio-8081-exec-5] INFO  E.Management.service.AuditService - Auditor 10 searching audit logs for invoice number: INV-1-20251012222041
+2025-10-21 12:51:52 [http-nio-8081-exec-3] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /api/audit/invoices
+2025-10-21 12:51:52 [http-nio-8081-exec-3] DEBUG E.M.security.JwtAuthenticationFilter - JWT token found in Authorization header
+2025-10-21 12:51:52 [http-nio-8081-exec-3] DEBUG E.M.security.JwtAuthenticationFilter - Extracted username: layla.auditor@jec.ps
+2025-10-21 12:51:52 [http-nio-8081-exec-3] DEBUG E.M.security.JwtAuthenticationFilter - Token validated successfully for user: layla.auditor@jec.ps with role: Auditor
+2025-10-21 12:51:52 [http-nio-8081-exec-3] INFO  E.Management.service.AuditService - Auditor 10 fetching all invoices
+2025-10-21 12:53:09 [http-nio-8081-exec-9] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /
+2025-10-21 12:53:09 [http-nio-8081-exec-9] DEBUG E.M.security.JwtAuthenticationFilter - No JWT token found in request to: /
+2025-10-21 12:53:09 [http-nio-8081-exec-8] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /style.css
+2025-10-21 12:53:09 [http-nio-8081-exec-8] DEBUG E.M.security.JwtAuthenticationFilter - No JWT token found in request to: /style.css
+2025-10-21 12:53:09 [http-nio-8081-exec-10] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /script.js
+2025-10-21 12:53:09 [http-nio-8081-exec-10] DEBUG E.M.security.JwtAuthenticationFilter - No JWT token found in request to: /script.js
+2025-10-21 12:53:09 [http-nio-8081-exec-2] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: HEAD /api/audit/invoices
+2025-10-21 12:53:09 [http-nio-8081-exec-2] DEBUG E.M.security.JwtAuthenticationFilter - JWT token found in Authorization header
+2025-10-21 12:53:09 [http-nio-8081-exec-2] DEBUG E.M.security.JwtAuthenticationFilter - Extracted username: layla.auditor@jec.ps
+2025-10-21 12:53:09 [http-nio-8081-exec-2] DEBUG E.M.security.JwtAuthenticationFilter - Token validated successfully for user: layla.auditor@jec.ps with role: Auditor
+2025-10-21 12:53:09 [http-nio-8081-exec-2] INFO  E.Management.service.AuditService - Auditor 10 fetching all invoices
+2025-10-21 12:53:09 [http-nio-8081-exec-1] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /api/audit/invoices
+2025-10-21 12:53:09 [http-nio-8081-exec-1] DEBUG E.M.security.JwtAuthenticationFilter - JWT token found in Authorization header
+2025-10-21 12:53:09 [http-nio-8081-exec-1] DEBUG E.M.security.JwtAuthenticationFilter - Extracted username: layla.auditor@jec.ps
+2025-10-21 12:53:09 [http-nio-8081-exec-4] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /favicon.ico
+2025-10-21 12:53:09 [http-nio-8081-exec-4] DEBUG E.M.security.JwtAuthenticationFilter - No JWT token found in request to: /favicon.ico
+2025-10-21 12:53:09 [http-nio-8081-exec-1] DEBUG E.M.security.JwtAuthenticationFilter - Token validated successfully for user: layla.auditor@jec.ps with role: Auditor
+2025-10-21 12:53:09 [http-nio-8081-exec-1] INFO  E.Management.service.AuditService - Auditor 10 fetching all invoices
+2025-10-21 12:53:20 [http-nio-8081-exec-5] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /api/audit/invoices/search
+2025-10-21 12:53:20 [http-nio-8081-exec-5] DEBUG E.M.security.JwtAuthenticationFilter - JWT token found in Authorization header
+2025-10-21 12:53:20 [http-nio-8081-exec-5] DEBUG E.M.security.JwtAuthenticationFilter - Extracted username: layla.auditor@jec.ps
+2025-10-21 12:53:20 [http-nio-8081-exec-5] DEBUG E.M.security.JwtAuthenticationFilter - Token validated successfully for user: layla.auditor@jec.ps with role: Auditor
+2025-10-21 12:53:20 [http-nio-8081-exec-5] INFO  E.Management.service.AuditService - Auditor 10 searching for invoice number: INV-1-20251012222041
+2025-10-21 12:53:29 [http-nio-8081-exec-3] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /
+2025-10-21 12:53:29 [http-nio-8081-exec-3] DEBUG E.M.security.JwtAuthenticationFilter - No JWT token found in request to: /
+2025-10-21 12:53:29 [http-nio-8081-exec-6] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /style.css
+2025-10-21 12:53:29 [http-nio-8081-exec-6] DEBUG E.M.security.JwtAuthenticationFilter - No JWT token found in request to: /style.css
+2025-10-21 12:53:29 [http-nio-8081-exec-7] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /script.js
+2025-10-21 12:53:29 [http-nio-8081-exec-7] DEBUG E.M.security.JwtAuthenticationFilter - No JWT token found in request to: /script.js
+2025-10-21 12:53:29 [http-nio-8081-exec-9] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: HEAD /api/audit/invoices
+2025-10-21 12:53:29 [http-nio-8081-exec-9] DEBUG E.M.security.JwtAuthenticationFilter - JWT token found in Authorization header
+2025-10-21 12:53:29 [http-nio-8081-exec-9] DEBUG E.M.security.JwtAuthenticationFilter - Extracted username: layla.auditor@jec.ps
+2025-10-21 12:53:29 [http-nio-8081-exec-9] DEBUG E.M.security.JwtAuthenticationFilter - Token validated successfully for user: layla.auditor@jec.ps with role: Auditor
+2025-10-21 12:53:29 [http-nio-8081-exec-9] INFO  E.Management.service.AuditService - Auditor 10 fetching all invoices
+2025-10-21 12:53:29 [http-nio-8081-exec-8] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /favicon.ico
+2025-10-21 12:53:29 [http-nio-8081-exec-8] DEBUG E.M.security.JwtAuthenticationFilter - No JWT token found in request to: /favicon.ico
+2025-10-21 12:53:29 [http-nio-8081-exec-10] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /api/audit/invoices
+2025-10-21 12:53:29 [http-nio-8081-exec-10] DEBUG E.M.security.JwtAuthenticationFilter - JWT token found in Authorization header
+2025-10-21 12:53:29 [http-nio-8081-exec-10] DEBUG E.M.security.JwtAuthenticationFilter - Extracted username: layla.auditor@jec.ps
+2025-10-21 12:53:29 [http-nio-8081-exec-10] DEBUG E.M.security.JwtAuthenticationFilter - Token validated successfully for user: layla.auditor@jec.ps with role: Auditor
+2025-10-21 12:53:29 [http-nio-8081-exec-10] INFO  E.Management.service.AuditService - Auditor 10 fetching all invoices
+2025-10-21 12:53:45 [http-nio-8081-exec-2] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /
+2025-10-21 12:53:45 [http-nio-8081-exec-2] DEBUG E.M.security.JwtAuthenticationFilter - No JWT token found in request to: /
+2025-10-21 12:53:45 [http-nio-8081-exec-4] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /style.css
+2025-10-21 12:53:45 [http-nio-8081-exec-4] DEBUG E.M.security.JwtAuthenticationFilter - No JWT token found in request to: /style.css
+2025-10-21 12:53:45 [http-nio-8081-exec-1] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /script.js
+2025-10-21 12:53:45 [http-nio-8081-exec-1] DEBUG E.M.security.JwtAuthenticationFilter - No JWT token found in request to: /script.js
+2025-10-21 12:53:45 [http-nio-8081-exec-5] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: HEAD /api/audit/invoices
+2025-10-21 12:53:45 [http-nio-8081-exec-5] DEBUG E.M.security.JwtAuthenticationFilter - JWT token found in Authorization header
+2025-10-21 12:53:45 [http-nio-8081-exec-5] DEBUG E.M.security.JwtAuthenticationFilter - Extracted username: layla.auditor@jec.ps
+2025-10-21 12:53:45 [http-nio-8081-exec-5] DEBUG E.M.security.JwtAuthenticationFilter - Token validated successfully for user: layla.auditor@jec.ps with role: Auditor
+2025-10-21 12:53:45 [http-nio-8081-exec-5] INFO  E.Management.service.AuditService - Auditor 10 fetching all invoices
+2025-10-21 12:53:45 [http-nio-8081-exec-3] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /favicon.ico
+2025-10-21 12:53:45 [http-nio-8081-exec-3] DEBUG E.M.security.JwtAuthenticationFilter - No JWT token found in request to: /favicon.ico
+2025-10-21 12:53:45 [http-nio-8081-exec-6] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /api/audit/invoices
+2025-10-21 12:53:45 [http-nio-8081-exec-6] DEBUG E.M.security.JwtAuthenticationFilter - JWT token found in Authorization header
+2025-10-21 12:53:45 [http-nio-8081-exec-6] DEBUG E.M.security.JwtAuthenticationFilter - Extracted username: layla.auditor@jec.ps
+2025-10-21 12:53:45 [http-nio-8081-exec-6] DEBUG E.M.security.JwtAuthenticationFilter - Token validated successfully for user: layla.auditor@jec.ps with role: Auditor
+2025-10-21 12:53:45 [http-nio-8081-exec-6] INFO  E.Management.service.AuditService - Auditor 10 fetching all invoices
+2025-10-21 12:54:01 [http-nio-8081-exec-7] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /
+2025-10-21 12:54:01 [http-nio-8081-exec-7] DEBUG E.M.security.JwtAuthenticationFilter - No JWT token found in request to: /
+2025-10-21 12:54:01 [http-nio-8081-exec-8] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /style.css
+2025-10-21 12:54:01 [http-nio-8081-exec-8] DEBUG E.M.security.JwtAuthenticationFilter - No JWT token found in request to: /style.css
+2025-10-21 12:54:01 [http-nio-8081-exec-9] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /script.js
+2025-10-21 12:54:01 [http-nio-8081-exec-9] DEBUG E.M.security.JwtAuthenticationFilter - No JWT token found in request to: /script.js
+2025-10-21 12:54:01 [http-nio-8081-exec-10] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: HEAD /api/audit/invoices
+2025-10-21 12:54:01 [http-nio-8081-exec-10] DEBUG E.M.security.JwtAuthenticationFilter - JWT token found in Authorization header
+2025-10-21 12:54:01 [http-nio-8081-exec-10] DEBUG E.M.security.JwtAuthenticationFilter - Extracted username: layla.auditor@jec.ps
+2025-10-21 12:54:01 [http-nio-8081-exec-10] DEBUG E.M.security.JwtAuthenticationFilter - Token validated successfully for user: layla.auditor@jec.ps with role: Auditor
+2025-10-21 12:54:01 [http-nio-8081-exec-10] INFO  E.Management.service.AuditService - Auditor 10 fetching all invoices
+2025-10-21 12:54:01 [http-nio-8081-exec-2] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /favicon.ico
+2025-10-21 12:54:01 [http-nio-8081-exec-2] DEBUG E.M.security.JwtAuthenticationFilter - No JWT token found in request to: /favicon.ico
+2025-10-21 12:54:01 [http-nio-8081-exec-4] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /api/audit/invoices
+2025-10-21 12:54:01 [http-nio-8081-exec-4] DEBUG E.M.security.JwtAuthenticationFilter - JWT token found in Authorization header
+2025-10-21 12:54:01 [http-nio-8081-exec-4] DEBUG E.M.security.JwtAuthenticationFilter - Extracted username: layla.auditor@jec.ps
+2025-10-21 12:54:01 [http-nio-8081-exec-4] DEBUG E.M.security.JwtAuthenticationFilter - Token validated successfully for user: layla.auditor@jec.ps with role: Auditor
+2025-10-21 12:54:01 [http-nio-8081-exec-4] INFO  E.Management.service.AuditService - Auditor 10 fetching all invoices
+2025-10-21 12:54:25 [http-nio-8081-exec-1] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /
+2025-10-21 12:54:25 [http-nio-8081-exec-1] DEBUG E.M.security.JwtAuthenticationFilter - No JWT token found in request to: /
+2025-10-21 12:54:25 [http-nio-8081-exec-5] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /style.css
+2025-10-21 12:54:25 [http-nio-8081-exec-5] DEBUG E.M.security.JwtAuthenticationFilter - No JWT token found in request to: /style.css
+2025-10-21 12:54:25 [http-nio-8081-exec-3] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /script.js
+2025-10-21 12:54:25 [http-nio-8081-exec-3] DEBUG E.M.security.JwtAuthenticationFilter - No JWT token found in request to: /script.js
+2025-10-21 12:54:25 [http-nio-8081-exec-6] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: HEAD /api/audit/invoices
+2025-10-21 12:54:25 [http-nio-8081-exec-6] DEBUG E.M.security.JwtAuthenticationFilter - JWT token found in Authorization header
+2025-10-21 12:54:25 [http-nio-8081-exec-6] DEBUG E.M.security.JwtAuthenticationFilter - Extracted username: layla.auditor@jec.ps
+2025-10-21 12:54:25 [http-nio-8081-exec-6] DEBUG E.M.security.JwtAuthenticationFilter - Token validated successfully for user: layla.auditor@jec.ps with role: Auditor
+2025-10-21 12:54:25 [http-nio-8081-exec-6] INFO  E.Management.service.AuditService - Auditor 10 fetching all invoices
+2025-10-21 12:54:25 [http-nio-8081-exec-7] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /favicon.ico
+2025-10-21 12:54:25 [http-nio-8081-exec-7] DEBUG E.M.security.JwtAuthenticationFilter - No JWT token found in request to: /favicon.ico
+2025-10-21 12:54:25 [http-nio-8081-exec-8] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /api/audit/invoices
+2025-10-21 12:54:25 [http-nio-8081-exec-8] DEBUG E.M.security.JwtAuthenticationFilter - JWT token found in Authorization header
+2025-10-21 12:54:25 [http-nio-8081-exec-8] DEBUG E.M.security.JwtAuthenticationFilter - Extracted username: layla.auditor@jec.ps
+2025-10-21 12:54:25 [http-nio-8081-exec-8] DEBUG E.M.security.JwtAuthenticationFilter - Token validated successfully for user: layla.auditor@jec.ps with role: Auditor
+2025-10-21 12:54:25 [http-nio-8081-exec-8] INFO  E.Management.service.AuditService - Auditor 10 fetching all invoices
+2025-10-21 12:54:29 [http-nio-8081-exec-9] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /api/audit/logs/search
+2025-10-21 12:54:29 [http-nio-8081-exec-9] DEBUG E.M.security.JwtAuthenticationFilter - JWT token found in Authorization header
+2025-10-21 12:54:29 [http-nio-8081-exec-9] DEBUG E.M.security.JwtAuthenticationFilter - Extracted username: layla.auditor@jec.ps
+2025-10-21 12:54:29 [http-nio-8081-exec-9] DEBUG E.M.security.JwtAuthenticationFilter - Token validated successfully for user: layla.auditor@jec.ps with role: Auditor
+2025-10-21 12:54:29 [http-nio-8081-exec-9] INFO  E.Management.service.AuditService - Auditor 10 searching audit logs for invoice number: INV-1-20251012222041
+2025-10-21 12:54:37 [http-nio-8081-exec-2] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /api/audit/invoices/search
+2025-10-21 12:54:37 [http-nio-8081-exec-2] DEBUG E.M.security.JwtAuthenticationFilter - JWT token found in Authorization header
+2025-10-21 12:54:37 [http-nio-8081-exec-2] DEBUG E.M.security.JwtAuthenticationFilter - Extracted username: layla.auditor@jec.ps
+2025-10-21 12:54:37 [http-nio-8081-exec-2] DEBUG E.M.security.JwtAuthenticationFilter - Token validated successfully for user: layla.auditor@jec.ps with role: Auditor
+2025-10-21 12:54:37 [http-nio-8081-exec-2] INFO  E.Management.service.AuditService - Auditor 10 searching for invoice number: INV-1-20251012222041
+2025-10-21 12:54:40 [http-nio-8081-exec-10] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /api/audit/invoices
+2025-10-21 12:54:40 [http-nio-8081-exec-10] DEBUG E.M.security.JwtAuthenticationFilter - JWT token found in Authorization header
+2025-10-21 12:54:40 [http-nio-8081-exec-10] DEBUG E.M.security.JwtAuthenticationFilter - Extracted username: layla.auditor@jec.ps
+2025-10-21 12:54:40 [http-nio-8081-exec-10] DEBUG E.M.security.JwtAuthenticationFilter - Token validated successfully for user: layla.auditor@jec.ps with role: Auditor
+2025-10-21 12:54:40 [http-nio-8081-exec-10] INFO  E.Management.service.AuditService - Auditor 10 fetching all invoices
+2025-10-21 12:54:52 [http-nio-8081-exec-4] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /api/audit/logs/search
+2025-10-21 12:54:52 [http-nio-8081-exec-4] DEBUG E.M.security.JwtAuthenticationFilter - JWT token found in Authorization header
+2025-10-21 12:54:52 [http-nio-8081-exec-4] DEBUG E.M.security.JwtAuthenticationFilter - Extracted username: layla.auditor@jec.ps
+2025-10-21 12:54:52 [http-nio-8081-exec-4] DEBUG E.M.security.JwtAuthenticationFilter - Token validated successfully for user: layla.auditor@jec.ps with role: Auditor
+2025-10-21 12:54:52 [http-nio-8081-exec-4] INFO  E.Management.service.AuditService - Auditor 10 searching audit logs for invoice number: INV-1-20251012222041
+2025-10-21 12:54:59 [http-nio-8081-exec-1] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /api/audit/pricing-history
+2025-10-21 12:54:59 [http-nio-8081-exec-1] DEBUG E.M.security.JwtAuthenticationFilter - JWT token found in Authorization header
+2025-10-21 12:54:59 [http-nio-8081-exec-1] DEBUG E.M.security.JwtAuthenticationFilter - Extracted username: layla.auditor@jec.ps
+2025-10-21 12:54:59 [http-nio-8081-exec-1] DEBUG E.M.security.JwtAuthenticationFilter - Token validated successfully for user: layla.auditor@jec.ps with role: Auditor
+2025-10-21 12:54:59 [http-nio-8081-exec-1] INFO  E.Management.service.AuditService - Auditor 10 fetching pricing history
+2025-10-21 12:55:26 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-10-21 12:55:26 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-10-21 12:55:28 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-10-21 12:55:28 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-10-21 12:55:28 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-10-21 12:56:54 [main] INFO  Electricity.Management.EIMApp - Starting EIMApp using Java 21.0.8 with PID 26052 (C:\Users\alool\Desktop\Code's\Training_Harri\Electricity_Invoice_Management\target\classes started by alool in C:\Users\alool\Desktop\Code's\Training_Harri\Electricity_Invoice_Management)
+2025-10-21 12:56:54 [main] INFO  Electricity.Management.EIMApp - No active profile set, falling back to 1 default profile: "default"
+2025-10-21 12:56:55 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-21 12:56:55 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 117 ms. Found 5 JPA repository interfaces.
+2025-10-21 12:56:55 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2025-10-21 12:56:55 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-10-21 12:56:55 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-10-21 12:56:55 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-10-21 12:56:55 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1514 ms
+2025-10-21 12:56:55 [main] DEBUG E.M.security.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2025-10-21 12:56:55 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-21 12:56:56 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.29.Final
+2025-10-21 12:56:56 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-10-21 12:56:56 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-10-21 12:56:56 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-10-21 12:56:56 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2ba318c2
+2025-10-21 12:56:56 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-10-21 12:56:56 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-10-21 12:56:56 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-10-21 12:56:56 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-10-21 12:56:57 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-10-21 12:56:57 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-10-21 12:56:57 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-10-21 12:56:58 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-10-21 12:56:59 [main] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2025-10-21 12:56:59 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: a87b76ef-98ad-4e65-bfac-629f6a4263e1
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-10-21 12:56:59 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-10-21 12:56:59 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2025-10-21 12:56:59 [main] INFO  Electricity.Management.EIMApp - Started EIMApp in 6.062 seconds (process running for 6.953)
+2025-10-21 12:57:00 [http-nio-8081-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-21 12:57:00 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-10-21 12:57:00 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2025-10-21 12:57:00 [http-nio-8081-exec-1] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /
+2025-10-21 12:57:00 [http-nio-8081-exec-1] DEBUG E.M.security.JwtAuthenticationFilter - No JWT token found in request to: /
+2025-10-21 12:57:00 [http-nio-8081-exec-3] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /style.css
+2025-10-21 12:57:00 [http-nio-8081-exec-2] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /script.js
+2025-10-21 12:57:00 [http-nio-8081-exec-3] DEBUG E.M.security.JwtAuthenticationFilter - No JWT token found in request to: /style.css
+2025-10-21 12:57:00 [http-nio-8081-exec-2] DEBUG E.M.security.JwtAuthenticationFilter - No JWT token found in request to: /script.js
+2025-10-21 12:57:00 [http-nio-8081-exec-4] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /favicon.ico
+2025-10-21 12:57:00 [http-nio-8081-exec-4] DEBUG E.M.security.JwtAuthenticationFilter - No JWT token found in request to: /favicon.ico
+2025-10-21 12:57:06 [http-nio-8081-exec-5] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: POST /api/auth/login
+2025-10-21 12:57:06 [http-nio-8081-exec-5] DEBUG E.M.security.JwtAuthenticationFilter - No JWT token found in request to: /api/auth/login
+2025-10-21 12:57:06 [http-nio-8081-exec-5] INFO  E.Management.service.AuthService - Login attempt for user: layla.auditor@jec.ps
+2025-10-21 12:57:06 [http-nio-8081-exec-5] INFO  E.Management.service.AuthService - User layla.auditor@jec.ps logged in successfully with role Auditor
+2025-10-21 12:57:06 [http-nio-8081-exec-6] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /api/audit/invoices
+2025-10-21 12:57:06 [http-nio-8081-exec-6] DEBUG E.M.security.JwtAuthenticationFilter - JWT token found in Authorization header
+2025-10-21 12:57:06 [http-nio-8081-exec-6] DEBUG E.M.security.JwtAuthenticationFilter - Extracted username: layla.auditor@jec.ps
+2025-10-21 12:57:06 [http-nio-8081-exec-6] DEBUG E.M.security.JwtAuthenticationFilter - Token validated successfully for user: layla.auditor@jec.ps with role: Auditor
+2025-10-21 12:57:06 [http-nio-8081-exec-6] INFO  E.Management.service.AuditService - Auditor 10 fetching all invoices
+2025-10-21 12:58:06 [http-nio-8081-exec-7] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /
+2025-10-21 12:58:06 [http-nio-8081-exec-7] DEBUG E.M.security.JwtAuthenticationFilter - No JWT token found in request to: /
+2025-10-21 12:58:06 [http-nio-8081-exec-9] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /style.css
+2025-10-21 12:58:06 [http-nio-8081-exec-9] DEBUG E.M.security.JwtAuthenticationFilter - No JWT token found in request to: /style.css
+2025-10-21 12:58:06 [http-nio-8081-exec-10] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /script.js
+2025-10-21 12:58:06 [http-nio-8081-exec-10] DEBUG E.M.security.JwtAuthenticationFilter - No JWT token found in request to: /script.js
+2025-10-21 12:58:06 [http-nio-8081-exec-1] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: HEAD /api/audit/invoices
+2025-10-21 12:58:06 [http-nio-8081-exec-1] DEBUG E.M.security.JwtAuthenticationFilter - JWT token found in Authorization header
+2025-10-21 12:58:06 [http-nio-8081-exec-1] DEBUG E.M.security.JwtAuthenticationFilter - Extracted username: layla.auditor@jec.ps
+2025-10-21 12:58:06 [http-nio-8081-exec-1] DEBUG E.M.security.JwtAuthenticationFilter - Token validated successfully for user: layla.auditor@jec.ps with role: Auditor
+2025-10-21 12:58:06 [http-nio-8081-exec-1] INFO  E.Management.service.AuditService - Auditor 10 fetching all invoices
+2025-10-21 12:58:06 [http-nio-8081-exec-3] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /favicon.ico
+2025-10-21 12:58:06 [http-nio-8081-exec-3] DEBUG E.M.security.JwtAuthenticationFilter - No JWT token found in request to: /favicon.ico
+2025-10-21 12:58:06 [http-nio-8081-exec-2] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /api/audit/invoices
+2025-10-21 12:58:06 [http-nio-8081-exec-2] DEBUG E.M.security.JwtAuthenticationFilter - JWT token found in Authorization header
+2025-10-21 12:58:06 [http-nio-8081-exec-2] DEBUG E.M.security.JwtAuthenticationFilter - Extracted username: layla.auditor@jec.ps
+2025-10-21 12:58:06 [http-nio-8081-exec-2] DEBUG E.M.security.JwtAuthenticationFilter - Token validated successfully for user: layla.auditor@jec.ps with role: Auditor
+2025-10-21 12:58:06 [http-nio-8081-exec-2] INFO  E.Management.service.AuditService - Auditor 10 fetching all invoices
+2025-10-21 12:58:48 [http-nio-8081-exec-4] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /api/audit/invoices/search
+2025-10-21 12:58:48 [http-nio-8081-exec-4] DEBUG E.M.security.JwtAuthenticationFilter - JWT token found in Authorization header
+2025-10-21 12:58:48 [http-nio-8081-exec-4] DEBUG E.M.security.JwtAuthenticationFilter - Extracted username: layla.auditor@jec.ps
+2025-10-21 12:58:48 [http-nio-8081-exec-4] DEBUG E.M.security.JwtAuthenticationFilter - Token validated successfully for user: layla.auditor@jec.ps with role: Auditor
+2025-10-21 12:58:48 [http-nio-8081-exec-4] INFO  E.Management.service.AuditService - Auditor 10 searching for invoice number: INV-7-20251013150543
+2025-10-21 12:58:56 [http-nio-8081-exec-5] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /api/audit/logs/search
+2025-10-21 12:58:56 [http-nio-8081-exec-5] DEBUG E.M.security.JwtAuthenticationFilter - JWT token found in Authorization header
+2025-10-21 12:58:56 [http-nio-8081-exec-5] DEBUG E.M.security.JwtAuthenticationFilter - Extracted username: layla.auditor@jec.ps
+2025-10-21 12:58:56 [http-nio-8081-exec-5] DEBUG E.M.security.JwtAuthenticationFilter - Token validated successfully for user: layla.auditor@jec.ps with role: Auditor
+2025-10-21 12:58:56 [http-nio-8081-exec-5] INFO  E.Management.service.AuditService - Auditor 10 searching audit logs for invoice number: INV-7-20251013150543
+2025-10-21 12:59:06 [http-nio-8081-exec-6] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /api/audit/invoices
+2025-10-21 12:59:06 [http-nio-8081-exec-6] DEBUG E.M.security.JwtAuthenticationFilter - JWT token found in Authorization header
+2025-10-21 12:59:06 [http-nio-8081-exec-6] DEBUG E.M.security.JwtAuthenticationFilter - Extracted username: layla.auditor@jec.ps
+2025-10-21 12:59:06 [http-nio-8081-exec-6] DEBUG E.M.security.JwtAuthenticationFilter - Token validated successfully for user: layla.auditor@jec.ps with role: Auditor
+2025-10-21 12:59:06 [http-nio-8081-exec-6] INFO  E.Management.service.AuditService - Auditor 10 fetching all invoices
+2025-10-21 13:04:57 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-10-21 13:04:57 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-10-21 13:04:59 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-10-21 13:04:59 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-10-21 13:04:59 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-10-21 13:08:18 [main] INFO  Electricity.Management.EIMApp - Starting EIMApp using Java 21.0.8 with PID 17844 (C:\Users\alool\Desktop\Code's\Training_Harri\Electricity_Invoice_Management\target\classes started by alool in C:\Users\alool\Desktop\Code's\Training_Harri\Electricity_Invoice_Management)
+2025-10-21 13:08:18 [main] INFO  Electricity.Management.EIMApp - No active profile set, falling back to 1 default profile: "default"
+2025-10-21 13:08:19 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-21 13:08:19 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 202 ms. Found 5 JPA repository interfaces.
+2025-10-21 13:08:20 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2025-10-21 13:08:20 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-10-21 13:08:20 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-10-21 13:08:20 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-10-21 13:08:20 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1829 ms
+2025-10-21 13:08:20 [main] DEBUG E.M.security.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2025-10-21 13:08:20 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-21 13:08:20 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.29.Final
+2025-10-21 13:08:20 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-10-21 13:08:20 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-10-21 13:08:20 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-10-21 13:08:21 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@63a7af06
+2025-10-21 13:08:21 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-10-21 13:08:21 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-10-21 13:08:21 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-10-21 13:08:21 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-10-21 13:08:22 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-10-21 13:08:22 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-10-21 13:08:23 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-10-21 13:08:24 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-10-21 13:08:24 [main] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2025-10-21 13:08:24 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 89ea0909-e244-486d-a940-289da77d2bd0
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-10-21 13:08:24 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-10-21 13:08:25 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2025-10-21 13:08:25 [main] INFO  Electricity.Management.EIMApp - Started EIMApp in 7.264 seconds (process running for 8.035)
+2025-10-21 13:08:56 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-10-21 13:08:56 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-10-21 13:08:58 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-10-21 13:08:58 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-10-21 13:08:58 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-10-21 13:24:06 [main] INFO  Electricity.Management.EIMApp - Starting EIMApp using Java 21.0.8 with PID 17120 (C:\Users\alool\Desktop\Code's\Training_Harri\Electricity_Invoice_Management\target\classes started by alool in C:\Users\alool\Desktop\Code's\Training_Harri\Electricity_Invoice_Management)
+2025-10-21 13:24:06 [main] INFO  Electricity.Management.EIMApp - No active profile set, falling back to 1 default profile: "default"
+2025-10-21 13:24:07 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-21 13:24:07 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 155 ms. Found 5 JPA repository interfaces.
+2025-10-21 13:24:08 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2025-10-21 13:24:08 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-10-21 13:24:08 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-10-21 13:24:08 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-10-21 13:24:08 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1710 ms
+2025-10-21 13:24:08 [main] DEBUG E.M.security.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2025-10-21 13:24:08 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-21 13:24:08 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.29.Final
+2025-10-21 13:24:08 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-10-21 13:24:08 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-10-21 13:24:08 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-10-21 13:24:09 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@240f2efd
+2025-10-21 13:24:09 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-10-21 13:24:09 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-10-21 13:24:09 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-10-21 13:24:09 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-10-21 13:24:10 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-10-21 13:24:10 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-10-21 13:24:10 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-10-21 13:24:11 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-10-21 13:24:11 [main] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2025-10-21 13:24:11 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: e3eaf6f2-af5c-493c-9a67-f5b2e3e1ef6b
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-10-21 13:24:11 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-10-21 13:24:12 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2025-10-21 13:24:12 [main] INFO  Electricity.Management.EIMApp - Started EIMApp in 6.028 seconds (process running for 6.789)
+2025-10-21 13:24:15 [http-nio-8081-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-21 13:24:15 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-10-21 13:24:15 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-10-21 13:24:15 [http-nio-8081-exec-1] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /
+2025-10-21 13:24:15 [http-nio-8081-exec-1] DEBUG E.M.security.JwtAuthenticationFilter - No JWT token found in request to: /
+2025-10-21 13:24:16 [http-nio-8081-exec-8] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /script.js
+2025-10-21 13:24:16 [http-nio-8081-exec-6] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /style.css
+2025-10-21 13:24:16 [http-nio-8081-exec-6] DEBUG E.M.security.JwtAuthenticationFilter - No JWT token found in request to: /style.css
+2025-10-21 13:24:16 [http-nio-8081-exec-8] DEBUG E.M.security.JwtAuthenticationFilter - No JWT token found in request to: /script.js
+2025-10-21 13:24:16 [http-nio-8081-exec-3] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /favicon.ico
+2025-10-21 13:24:16 [http-nio-8081-exec-3] DEBUG E.M.security.JwtAuthenticationFilter - No JWT token found in request to: /favicon.ico
+2025-10-21 13:24:20 [http-nio-8081-exec-5] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: POST /api/auth/login
+2025-10-21 13:24:20 [http-nio-8081-exec-5] DEBUG E.M.security.JwtAuthenticationFilter - No JWT token found in request to: /api/auth/login
+2025-10-21 13:24:21 [http-nio-8081-exec-5] INFO  E.Management.service.AuthService - Login attempt for user: admin@jerusalem-electric.com
+2025-10-21 13:24:21 [http-nio-8081-exec-5] INFO  E.Management.service.AuthService - User admin@jerusalem-electric.com logged in successfully with role Admin
+2025-10-21 13:24:21 [http-nio-8081-exec-7] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /api/admin/providers/1
+2025-10-21 13:24:21 [http-nio-8081-exec-7] DEBUG E.M.security.JwtAuthenticationFilter - JWT token found in Authorization header
+2025-10-21 13:24:21 [http-nio-8081-exec-2] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /api/admin/users
+2025-10-21 13:24:21 [http-nio-8081-exec-2] DEBUG E.M.security.JwtAuthenticationFilter - JWT token found in Authorization header
+2025-10-21 13:24:21 [http-nio-8081-exec-2] DEBUG E.M.security.JwtAuthenticationFilter - Extracted username: admin@jerusalem-electric.com
+2025-10-21 13:24:21 [http-nio-8081-exec-7] DEBUG E.M.security.JwtAuthenticationFilter - Extracted username: admin@jerusalem-electric.com
+2025-10-21 13:24:21 [http-nio-8081-exec-2] DEBUG E.M.security.JwtAuthenticationFilter - Token validated successfully for user: admin@jerusalem-electric.com with role: Admin
+2025-10-21 13:24:21 [http-nio-8081-exec-7] DEBUG E.M.security.JwtAuthenticationFilter - Token validated successfully for user: admin@jerusalem-electric.com with role: Admin
+2025-10-21 13:24:21 [http-nio-8081-exec-7] INFO  E.Management.service.AdminService - Fetching provider with ID: 1
+2025-10-21 13:24:21 [http-nio-8081-exec-2] ERROR E.M.exception.GlobalExceptionHandler - Internal server error: 
+org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported
+	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.handleNoMatch(RequestMappingInfoHandlerMapping.java:267)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lookupHandlerMethod(AbstractHandlerMethodMapping.java:441)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.getHandlerInternal(AbstractHandlerMethodMapping.java:382)
+	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.getHandlerInternal(RequestMappingInfoHandlerMapping.java:127)
+	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.getHandlerInternal(RequestMappingInfoHandlerMapping.java:68)
+	at org.springframework.web.servlet.handler.AbstractHandlerMapping.getHandler(AbstractHandlerMapping.java:509)
+	at org.springframework.web.servlet.DispatcherServlet.getHandler(DispatcherServlet.java:1284)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1065)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:101)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:125)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at Electricity.Management.security.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:106)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.ServletRequestPathFilter.doFilter(ServletRequestPathFilter.java:52)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebSecurityConfiguration.java:319)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$4(HandlerMappingIntrospector.java:267)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:240)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:362)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:278)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1776)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:975)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:493)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-10-21 13:24:22 [http-nio-8081-exec-4] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /
+2025-10-21 13:24:22 [http-nio-8081-exec-4] DEBUG E.M.security.JwtAuthenticationFilter - No JWT token found in request to: /
+2025-10-21 13:24:22 [http-nio-8081-exec-9] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /style.css
+2025-10-21 13:24:22 [http-nio-8081-exec-9] DEBUG E.M.security.JwtAuthenticationFilter - No JWT token found in request to: /style.css
+2025-10-21 13:24:22 [http-nio-8081-exec-10] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /script.js
+2025-10-21 13:24:22 [http-nio-8081-exec-10] DEBUG E.M.security.JwtAuthenticationFilter - No JWT token found in request to: /script.js
+2025-10-21 13:24:22 [http-nio-8081-exec-1] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: HEAD /api/admin/users
+2025-10-21 13:24:22 [http-nio-8081-exec-1] DEBUG E.M.security.JwtAuthenticationFilter - JWT token found in Authorization header
+2025-10-21 13:24:22 [http-nio-8081-exec-1] DEBUG E.M.security.JwtAuthenticationFilter - Extracted username: admin@jerusalem-electric.com
+2025-10-21 13:24:22 [http-nio-8081-exec-1] DEBUG E.M.security.JwtAuthenticationFilter - Token validated successfully for user: admin@jerusalem-electric.com with role: Admin
+2025-10-21 13:24:22 [http-nio-8081-exec-1] ERROR E.M.exception.GlobalExceptionHandler - Internal server error: 
+org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'HEAD' is not supported
+	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.handleNoMatch(RequestMappingInfoHandlerMapping.java:267)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lookupHandlerMethod(AbstractHandlerMethodMapping.java:441)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.getHandlerInternal(AbstractHandlerMethodMapping.java:382)
+	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.getHandlerInternal(RequestMappingInfoHandlerMapping.java:127)
+	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.getHandlerInternal(RequestMappingInfoHandlerMapping.java:68)
+	at org.springframework.web.servlet.handler.AbstractHandlerMapping.getHandler(AbstractHandlerMapping.java:509)
+	at org.springframework.web.servlet.DispatcherServlet.getHandler(DispatcherServlet.java:1284)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1065)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.doHead(HttpServlet.java:211)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:587)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:101)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:125)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at Electricity.Management.security.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:106)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.ServletRequestPathFilter.doFilter(ServletRequestPathFilter.java:52)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebSecurityConfiguration.java:319)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$4(HandlerMappingIntrospector.java:267)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:240)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:362)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:278)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1776)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:975)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:493)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-10-21 13:24:22 [http-nio-8081-exec-8] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /api/admin/users
+2025-10-21 13:24:22 [http-nio-8081-exec-6] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /api/admin/providers/1
+2025-10-21 13:24:22 [http-nio-8081-exec-8] DEBUG E.M.security.JwtAuthenticationFilter - JWT token found in Authorization header
+2025-10-21 13:24:22 [http-nio-8081-exec-6] DEBUG E.M.security.JwtAuthenticationFilter - JWT token found in Authorization header
+2025-10-21 13:24:22 [http-nio-8081-exec-8] DEBUG E.M.security.JwtAuthenticationFilter - Extracted username: admin@jerusalem-electric.com
+2025-10-21 13:24:22 [http-nio-8081-exec-6] DEBUG E.M.security.JwtAuthenticationFilter - Extracted username: admin@jerusalem-electric.com
+2025-10-21 13:24:22 [http-nio-8081-exec-8] DEBUG E.M.security.JwtAuthenticationFilter - Token validated successfully for user: admin@jerusalem-electric.com with role: Admin
+2025-10-21 13:24:22 [http-nio-8081-exec-6] DEBUG E.M.security.JwtAuthenticationFilter - Token validated successfully for user: admin@jerusalem-electric.com with role: Admin
+2025-10-21 13:24:22 [http-nio-8081-exec-6] INFO  E.Management.service.AdminService - Fetching provider with ID: 1
+2025-10-21 13:24:22 [http-nio-8081-exec-8] ERROR E.M.exception.GlobalExceptionHandler - Internal server error: 
+org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported
+	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.handleNoMatch(RequestMappingInfoHandlerMapping.java:267)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lookupHandlerMethod(AbstractHandlerMethodMapping.java:441)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.getHandlerInternal(AbstractHandlerMethodMapping.java:382)
+	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.getHandlerInternal(RequestMappingInfoHandlerMapping.java:127)
+	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.getHandlerInternal(RequestMappingInfoHandlerMapping.java:68)
+	at org.springframework.web.servlet.handler.AbstractHandlerMapping.getHandler(AbstractHandlerMapping.java:509)
+	at org.springframework.web.servlet.DispatcherServlet.getHandler(DispatcherServlet.java:1284)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1065)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:101)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:125)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at Electricity.Management.security.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:106)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.ServletRequestPathFilter.doFilter(ServletRequestPathFilter.java:52)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebSecurityConfiguration.java:319)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$4(HandlerMappingIntrospector.java:267)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:240)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:362)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:278)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1776)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:975)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:493)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-10-21 13:24:22 [http-nio-8081-exec-3] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /favicon.ico
+2025-10-21 13:24:22 [http-nio-8081-exec-3] DEBUG E.M.security.JwtAuthenticationFilter - No JWT token found in request to: /favicon.ico
+2025-10-21 13:25:21 [http-nio-8081-exec-5] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: POST /api/admin/users
+2025-10-21 13:25:21 [http-nio-8081-exec-5] DEBUG E.M.security.JwtAuthenticationFilter - JWT token found in Authorization header
+2025-10-21 13:25:21 [http-nio-8081-exec-5] DEBUG E.M.security.JwtAuthenticationFilter - Extracted username: admin@jerusalem-electric.com
+2025-10-21 13:25:21 [http-nio-8081-exec-5] DEBUG E.M.security.JwtAuthenticationFilter - Token validated successfully for user: admin@jerusalem-electric.com with role: Admin
+2025-10-21 13:25:21 [http-nio-8081-exec-5] INFO  E.Management.service.AdminService - Creating new customer with email: dareen@gmail.com
+2025-10-21 13:25:21 [http-nio-8081-exec-5] INFO  E.Management.service.AdminService - Customer created successfully with ID: 29
+2025-10-21 13:25:22 [http-nio-8081-exec-2] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /api/admin/users
+2025-10-21 13:25:22 [http-nio-8081-exec-2] DEBUG E.M.security.JwtAuthenticationFilter - JWT token found in Authorization header
+2025-10-21 13:25:22 [http-nio-8081-exec-2] DEBUG E.M.security.JwtAuthenticationFilter - Extracted username: admin@jerusalem-electric.com
+2025-10-21 13:25:22 [http-nio-8081-exec-2] DEBUG E.M.security.JwtAuthenticationFilter - Token validated successfully for user: admin@jerusalem-electric.com with role: Admin
+2025-10-21 13:25:22 [http-nio-8081-exec-2] ERROR E.M.exception.GlobalExceptionHandler - Internal server error: 
+org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported
+	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.handleNoMatch(RequestMappingInfoHandlerMapping.java:267)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lookupHandlerMethod(AbstractHandlerMethodMapping.java:441)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.getHandlerInternal(AbstractHandlerMethodMapping.java:382)
+	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.getHandlerInternal(RequestMappingInfoHandlerMapping.java:127)
+	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.getHandlerInternal(RequestMappingInfoHandlerMapping.java:68)
+	at org.springframework.web.servlet.handler.AbstractHandlerMapping.getHandler(AbstractHandlerMapping.java:509)
+	at org.springframework.web.servlet.DispatcherServlet.getHandler(DispatcherServlet.java:1284)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1065)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:101)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:125)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at Electricity.Management.security.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:106)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.ServletRequestPathFilter.doFilter(ServletRequestPathFilter.java:52)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebSecurityConfiguration.java:319)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$4(HandlerMappingIntrospector.java:267)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:240)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:362)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:278)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1776)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:975)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:493)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-10-21 13:26:46 [http-nio-8081-exec-7] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /
+2025-10-21 13:26:46 [http-nio-8081-exec-7] DEBUG E.M.security.JwtAuthenticationFilter - No JWT token found in request to: /
+2025-10-21 13:26:46 [http-nio-8081-exec-4] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /style.css
+2025-10-21 13:26:46 [http-nio-8081-exec-4] DEBUG E.M.security.JwtAuthenticationFilter - No JWT token found in request to: /style.css
+2025-10-21 13:26:46 [http-nio-8081-exec-9] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /script.js
+2025-10-21 13:26:46 [http-nio-8081-exec-9] DEBUG E.M.security.JwtAuthenticationFilter - No JWT token found in request to: /script.js
+2025-10-21 13:26:46 [http-nio-8081-exec-10] DEBUG E.M.security.JwtAuthenticationFilter - Processing request: GET /favicon.ico
+2025-10-21 13:26:46 [http-nio-8081-exec-10] DEBUG E.M.security.JwtAuthenticationFilter - No JWT token found in request to: /favicon.ico
+2025-10-21 13:46:46 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=12m7s623ms179µs100ns).
+2025-10-21 14:34:40 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=47m53s408ms264µs100ns).
+2025-10-21 14:50:23 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m52s845ms7µs).
+2025-10-21 14:57:41 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-10-21 14:57:41 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-10-21 14:57:43 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-10-21 14:57:43 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-10-21 14:57:43 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

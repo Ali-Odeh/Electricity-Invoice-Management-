@@ -57,6 +57,7 @@ public class AdminService {
         user.setAddress(request.getAddress());
         user.setPhoneNumber(request.getPhoneNumber());
         user.setRole(UserRole.Customer);
+        user.setIsActive(true);
 
         User savedUser = userRepository.save(user);
 

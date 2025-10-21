@@ -97,5 +97,39 @@ public class AuditService {
         );
     }
 
+
+    public List<AuditLog> searchAuditLogsByInvoiceNumber(String invoiceNumber, Integer auditorUserId) {
+        logger.info("Auditor {} searching audit logs for invoice number: {}", auditorUserId, invoiceNumber);
+
+        User auditor = userRepository.findById(auditorUserId)
+                .orElseThrow(() -> new ResourceNotFoundException("Auditor not found"));
+
+        if (auditor.getProvider() == null) {
+            throw new UnauthorizedException("Auditor must be assigned to a provider");
+        }
+
+        return auditLogRepository.findByInvoice_InvoiceNumberAndInvoice_Provider_ProviderId(
+                invoiceNumber,
+                auditor.getProvider().getProviderId()
+        );
+    }
+
+
+    public List<Invoice> searchInvoiceByNumber(String invoiceNumber, Integer auditorUserId) {
+        logger.info("Auditor {} searching for invoice number: {}", auditorUserId, invoiceNumber);
+
+        User auditor = userRepository.findById(auditorUserId)
+                .orElseThrow(() -> new ResourceNotFoundException("Auditor not found"));
+
+        if (auditor.getProvider() == null) {
+            throw new UnauthorizedException("Auditor must be assigned to a provider");
+        }
+
+        return invoiceRepository.findByInvoiceNumberAndProvider_ProviderId(
+                invoiceNumber,
+                auditor.getProvider().getProviderId()
+        );
+    }
+
 }
 

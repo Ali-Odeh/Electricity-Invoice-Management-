@@ -13,7 +13,7 @@
         <div class="container">
             <div class="card">
                 <h1>⚡ Electricity Invoice Management</h1>
-                <h2>Login</h2>
+        <!--        <h2>Login</h2>   -->
                 <form id="loginForm">
                     <div class="form-group">
                         <label>Email</label>
@@ -174,11 +174,21 @@
 
                 <div id="invoicesTab" class="tab-content active">
                     <h3>All Invoices</h3>
+                    <div class="search-box" style="margin-bottom: 20px; align-items: center; gap: 10px;">
+                        <input type="text" id="auditorInvoiceSearchInput" placeholder="Search by Invoice #" style="padding: 10px; width: 350px; border: 1px solid #ddd; border-radius: 4px;">
+                        <button onclick="searchAuditorInvoices()" class="btn btn-primary">Search</button>
+                        <button onclick="clearAuditorInvoiceSearch()" class="btn btn-secondary">Clear</button>
+                    </div>
                     <div id="auditorInvoices"></div>
                 </div>
 
                 <div id="logsTab" class="tab-content">
                     <h3>Audit Logs</h3>
+                    <div class="search-box" style="margin-bottom: 20px; align-items: center; gap: 10px;">
+                        <input type="text" id="invoiceSearchInput" placeholder="Enter Invoice #" style="padding: 10px; width: 350px; border: 1px solid #ddd; border-radius: 4px;">
+                        <button onclick="searchAuditLogs()" class="btn btn-primary">Search</button>
+                        <button onclick="clearAuditSearch()" class="btn btn-secondary">Clear</button>
+                    </div>
                     <div id="auditLogs"></div>
                 </div>
 

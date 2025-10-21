@@ -472,6 +472,45 @@ async function loadAuditorInvoices() {
     }
 }
 
+async function searchAuditorInvoices() {
+    const invoiceNumber = document.getElementById('auditorInvoiceSearchInput').value.trim();
+    
+    if (!invoiceNumber) {
+        alert('Please enter an Invoice Number');
+        return;
+    }
+
+    try {
+        const invoices = await apiCall(`/audit/invoices/search?invoiceNumber=${encodeURIComponent(invoiceNumber)}&auditorUserId=${currentUser.userId}`);
+        if (!invoices) return; // Token expired, user redirected to login
+        
+        if (invoices.length === 0) {
+            document.getElementById('auditorInvoices').innerHTML = `
+                <div style="text-align: center; padding: 40px; color: #666;">
+                    <p style="font-size: 16px;">No invoice found with number: <strong>${invoiceNumber}</strong></p>
+                    <p style="font-size: 14px; color: #999;">Please check the invoice number and try again</p>
+                </div>
+            `;
+            return;
+        }
+
+        displayInvoices(invoices, 'auditorInvoices');
+    } catch (error) {
+        console.error('Error searching invoices:', error);
+        document.getElementById('auditorInvoices').innerHTML = `
+            <div style="text-align: center; padding: 40px; color: #d32f2f;">
+                <p style="font-size: 16px;">Error searching invoices</p>
+                <p style="font-size: 14px;">${error.message || 'Please try again'}</p>
+            </div>
+        `;
+    }
+}
+
+function clearAuditorInvoiceSearch() {
+    document.getElementById('auditorInvoiceSearchInput').value = '';
+    loadAuditorInvoices();
+}
+
 function displayInvoices(invoices, containerId) {
     console.log('Displaying invoices:', invoices); // Debug log
 
@@ -536,10 +575,40 @@ function displayInvoices(invoices, containerId) {
 
 // Audit Functions
 async function loadAuditLogs() {
+    // Show initial message instead of loading all logs
+    document.getElementById('auditLogs').innerHTML = `
+        <div style="text-align: center; padding: 40px; color: #666;">
+            <p style="font-size: 16px;">Enter an Invoice Number above to search for audit logs</p>
+        </div>
+    `;
+}
+
+async function searchAuditLogs() {
+    const invoiceNumber = document.getElementById('invoiceSearchInput').value.trim();
+    
+    if (!invoiceNumber) {
+        alert('Please enter an Invoice Number');
+        return;
+    }
+
     try {
-        const logs = await apiCall(`/audit/logs?auditorUserId=${currentUser.userId}`);
+        const logs = await apiCall(`/audit/logs/search?invoiceNumber=${encodeURIComponent(invoiceNumber)}&auditorUserId=${currentUser.userId}`);
         if (!logs) return; // Token expired, user redirected to login
+        
+        if (logs.length === 0) {
+            document.getElementById('auditLogs').innerHTML = `
+                <div style="text-align: center; padding: 40px; color: #666;">
+                    <p style="font-size: 16px;">No audit logs found for Invoice Number: <strong>${invoiceNumber}</strong></p>
+                    <p style="font-size: 14px; color: #999;">Please check the invoice number and try again</p>
+                </div>
+            `;
+            return;
+        }
+
         const html = `
+            <div style="margin-bottom: 15px; padding: 10px; background-color: #e8f5e9; border-left: 4px solid #4caf50; border-radius: 4px;">
+                <strong>Found ${logs.length} audit log(s) for Invoice: ${invoiceNumber}</strong>
+            </div>
             <table>
                 <thead>
                     <tr>
@@ -565,8 +634,19 @@ async function loadAuditLogs() {
         `;
         document.getElementById('auditLogs').innerHTML = html;
     } catch (error) {
-        console.error('Error loading audit logs:', error);
+        console.error('Error searching audit logs:', error);
+        document.getElementById('auditLogs').innerHTML = `
+            <div style="text-align: center; padding: 40px; color: #d32f2f;">
+                <p style="font-size: 16px;">Error searching audit logs</p>
+                <p style="font-size: 14px;">${error.message || 'Please try again'}</p>
+            </div>
+        `;
     }
+}
+
+function clearAuditSearch() {
+    document.getElementById('invoiceSearchInput').value = '';
+    loadAuditLogs();
 }
 
 async function handleNLQuery(e) {

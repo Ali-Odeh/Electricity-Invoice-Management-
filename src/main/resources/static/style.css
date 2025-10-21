@@ -188,7 +188,7 @@ body {
 
 .inline-form {
     display: flex;
-    gap: 10px;
+    gap: 20px;
     flex-wrap: wrap;
     margin-bottom: 30px;
 }
@@ -200,6 +200,7 @@ body {
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
+    gap: 20px;
 }
 
 .inline-form button {

@@ -38,12 +38,32 @@ public class AuditController {
         return ResponseEntity.ok(invoices);
     }
 
+    @GetMapping("/invoices/search")
+    @Operation(summary = "Search Invoice by Number", description = "Auditor searches for a specific invoice by invoice number")
+    public ResponseEntity<List<Invoice>> searchInvoiceByNumber(
+            @RequestParam String invoiceNumber,
+            @RequestParam Integer auditorUserId) {
+
+        List<Invoice> invoices = auditService.searchInvoiceByNumber(invoiceNumber, auditorUserId);
+        return ResponseEntity.ok(invoices);
+    }
+
 
     @GetMapping("/logs")
     @Operation(summary = "Get All Audit Logs", description = "Auditor retrieves all audit logs from their provider")
     public ResponseEntity<List<AuditLog>> getAllAuditLogs(@RequestParam Integer auditorUserId) {
 
         List<AuditLog> logs = auditService.getAllAuditLogs(auditorUserId);
+        return ResponseEntity.ok(logs);
+    }
+
+    @GetMapping("/logs/search")
+    @Operation(summary = "Search Audit Logs by Invoice Number", description = "Auditor searches audit logs for a specific invoice number")
+    public ResponseEntity<List<AuditLog>> searchAuditLogsByInvoiceNumber(
+            @RequestParam String invoiceNumber,
+            @RequestParam Integer auditorUserId) {
+
+        List<AuditLog> logs = auditService.searchAuditLogsByInvoiceNumber(invoiceNumber, auditorUserId);
         return ResponseEntity.ok(logs);
     }
 
