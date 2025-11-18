@@ -3,7 +3,7 @@ package Electricity.Management.service;
 
 import Electricity.Management.Enum.AuditAction;
 import Electricity.Management.Enum.PaymentStatus;
-import Electricity.Management.Enum.UserRole;
+import Electricity.Management.Enum.Role;
 import Electricity.Management.dto.CreateInvoiceRequest;
 import Electricity.Management.dto.UpdateInvoiceRequest;
 import Electricity.Management.entity.*;
@@ -14,6 +14,7 @@ import Electricity.Management.repository.AuditLogRepository;
 import Electricity.Management.repository.InvoiceRepository;
 import Electricity.Management.repository.PricingHistoryRepository;
 import Electricity.Management.repository.UserRepository;
+import Electricity.Management.repository.UserRoleRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,6 +48,9 @@ public class InvoiceService {
     private AuditLogRepository auditLogRepository;
 
     @Autowired
+    private UserRoleRepository userRoleRepository;
+
+    @Autowired
     private ObjectMapper objectMapper;
 
 
@@ -61,7 +65,8 @@ public class InvoiceService {
         User customer = userRepository.findById(request.getCustomerId())
                 .orElseThrow(() -> new ResourceNotFoundException("Customer not found"));
 
-        if (!customer.getRole().equals(UserRole.Customer)) {
+        // Check if user has Customer role
+        if (!userRoleRepository.existsByUser_UserIdAndRole(customer.getUserId(), Role.Customer)) {
             throw new BadRequestException("Selected user is not a customer");
         }
 
@@ -115,14 +120,17 @@ public class InvoiceService {
                 .orElseThrow(() -> new ResourceNotFoundException("Invoice not found"));
 
 
-        // Check permissions
-        if (updater.getRole().equals(UserRole.Invoice_Creator)) {
+        // Check permissions based on user's roles
+        boolean isInvoiceCreator = userRoleRepository.existsByUser_UserIdAndRole(updaterUserId, Role.Invoice_Creator);
+        boolean isSuperCreator = userRoleRepository.existsByUser_UserIdAndRole(updaterUserId, Role.Super_Creator);
+
+        if (isInvoiceCreator && !isSuperCreator) {
             // Invoice Creator can only edit their own invoices
             if (!invoice.getCreatedByUser().getUserId().equals(updaterUserId)) {
                 throw new UnauthorizedException("You can only edit invoices you created");
             }
         }
-        else if (updater.getRole().equals(UserRole.Super_Creator)) {
+        else if (isSuperCreator) {
             // Super Creator can edit any invoice in their provider
             if (!invoice.getProvider().getProviderId().equals(updater.getProvider().getProviderId())) {
                 throw new UnauthorizedException("You can only edit invoices from your provider");
@@ -161,13 +169,17 @@ public class InvoiceService {
         Invoice invoice = invoiceRepository.findById(invoiceId)
                 .orElseThrow(() -> new ResourceNotFoundException("Invoice not found"));
 
-        // Check permissions
-        if (user.getRole().equals(UserRole.Customer)) {
+        // Check permissions based on user's roles
+        boolean isCustomer = userRoleRepository.existsByUser_UserIdAndRole(userId, Role.Customer);
+        boolean isInvoiceCreator = userRoleRepository.existsByUser_UserIdAndRole(userId, Role.Invoice_Creator);
+        boolean isSuperCreator = userRoleRepository.existsByUser_UserIdAndRole(userId, Role.Super_Creator);
+
+        if (isCustomer) {
             if (!invoice.getCustomer().getUserId().equals(userId)) {
                 throw new UnauthorizedException("You can only view your own invoices");
             }
         }
-        else if (user.getRole().equals(UserRole.Invoice_Creator) || user.getRole().equals(UserRole.Super_Creator)) {
+        else if (isInvoiceCreator || isSuperCreator) {
             if (!invoice.getProvider().getProviderId().equals(user.getProvider().getProviderId())) {
                 throw new UnauthorizedException("You can only view invoices from your provider");
             }

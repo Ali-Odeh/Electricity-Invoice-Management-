@@ -47,6 +47,7 @@ public class GeminiService {
 
 
     public Map<String, Object> processNaturalLanguageQuery(String query, Integer auditorUserId) {
+
         logger.info("Processing natural language query for auditor {}: {}", auditorUserId, query);
 
         User auditor = userRepository.findById(auditorUserId)
@@ -62,9 +63,7 @@ public class GeminiService {
         String sql = generateSQLFromNaturalLanguage(query, providerId);
 
         // Validate and execute SQL
-       //  List<Map<String, Object>> results = geminiRepository.executeSql(sql);
-         List<Object[]> results = geminiRepository.executeSql(sql);
-
+        List<Map<String, Object>> results = geminiRepository.executeSql(sql);
 
         Map<String, Object> response = new HashMap<>();
         response.put("query", query);
@@ -102,11 +101,15 @@ public class GeminiService {
                             "5. If querying multiple tables, ensure ALL tables are filtered by provider_id\n" +
                             "6. Return ONLY the SQL query, no explanations or markdown\n" +
                             "7. Use proper JOINs when needed\n" +
-                            "8. Limit results to 100 rows maximum\n\n" +
+                            "8. Limit results to 100 rows maximum\n" +
+
                             "SQL Query:",
                     databaseSchema, naturalLanguageQuery, providerId, providerId, providerId, providerId, providerId, providerId
             );
 
+ /*                 "9. IMPORTANT: Always use explicit column names in SELECT, NEVER use * or A.*\n" +
+                            "   Example: SELECT audit_id, invoice_id, action FROM Audit_logs , etc...\n" +
+                            "   NOT: SELECT * FROM Audit_logs or SELECT A.* FROM Audit_logs AS A\n\n" +*/
 
             Map<String, Object> requestBody = new HashMap<>();
             Map<String, Object> content = new HashMap<>();
@@ -115,11 +118,11 @@ public class GeminiService {
             content.put("parts", List.of(parts));
             requestBody.put("contents", List.of(content));
 
-            String fullUrl = geminiUrl + geminiApiKey;
+            String Gemini_fullUrl = geminiUrl + geminiApiKey;
 
             WebClient webClient = webClientBuilder.build();
             String response = webClient.post()
-                    .uri(fullUrl)
+                    .uri(Gemini_fullUrl)
                     .header("Content-Type", "application/json")
                     .bodyValue(requestBody)
                     .retrieve()

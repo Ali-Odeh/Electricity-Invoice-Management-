@@ -26,7 +26,7 @@ async function checkAuth() {
     if (token && user) {
         authToken = token;
         currentUser = JSON.parse(user);
-        
+
         // Verify token is still valid by making a test request
         console.log('Checking if stored token is still valid for user:', currentUser.email);
         try {
@@ -92,16 +92,27 @@ async function handleLogin(e) {
         }
 
         const data = await response.json();
-        authToken = data.token;
-        currentUser = data;
+        console.log('Login response:', data);
 
-        console.log('Login successful! Token:', authToken);
-        console.log('User data:', currentUser);
+        // Check if user needs to select a role
+        if (data.requiresRoleSelection) {
+            // User has multiple roles - show role selection page
+            currentUser = data;
+            showRoleSelection(data);
+        } else {
+            // User has single role or role already selected - proceed to dashboard
+            authToken = data.token;
+            currentUser = data;
+            currentUser.role = data.selectedRole;  // Set current role
 
-        localStorage.setItem('authToken', authToken);
-        localStorage.setItem('currentUser', JSON.stringify(currentUser));
+            console.log('Login successful! Token:', authToken);
+            console.log('User data:', currentUser);
 
-        showDashboard();
+            localStorage.setItem('authToken', authToken);
+            localStorage.setItem('currentUser', JSON.stringify(currentUser));
+
+            showDashboard();
+        }
     } catch (error) {
         document.getElementById('loginError').textContent = error.message;
     }
@@ -128,6 +139,14 @@ function showDashboard() {
         userInfoText += ` - ${currentUser.providerName}`;
     }
     document.getElementById('userInfo').textContent = userInfoText;
+
+    // Show role switcher if user has multiple roles
+    if (currentUser.roles && currentUser.roles.length > 1) {
+        document.getElementById('roleSwitcher').style.display = 'inline-block';
+        setupRoleSwitcher();
+    } else {
+        document.getElementById('roleSwitcher').style.display = 'none';
+    }
 
     // Hide all dashboards
     document.querySelectorAll('.dashboard').forEach(d => d.style.display = 'none');
@@ -172,6 +191,8 @@ function showTab(tabName) {
     if (tabName === 'pricing') loadPricingHistory();
 }
 
+
+
 async function apiCall(endpoint, options = {}) {
     const headers = {
         'Content-Type': 'application/json'
@@ -181,7 +202,8 @@ async function apiCall(endpoint, options = {}) {
     if (authToken && authToken !== 'no-token') {
         headers['Authorization'] = `Bearer ${authToken}`;
         console.log('Making API call with token to:', endpoint);
-    } else {
+    }
+    else {
         console.log('Making API call without token to:', endpoint);
     }
 
@@ -218,6 +240,7 @@ async function apiCall(endpoint, options = {}) {
                 alert(errorMessage);
                 showPage('loginPage');
                 return null;
+
             } else if (response.status === 403) {
                 // Permission denied - show error but don't logout
                 let errorMessage = 'Access denied. You do not have permission to perform this action.';
@@ -247,6 +270,7 @@ async function apiCall(endpoint, options = {}) {
         }
 
         return response.json();
+
     } catch (error) {
         if (error.name === 'TypeError' && error.message.includes('fetch')) {
             throw new Error('Network error. Please check your connection.');
@@ -255,21 +279,30 @@ async function apiCall(endpoint, options = {}) {
     }
 }
 
+
 // Admin Functions
 async function handleCreateUser(e) {
     e.preventDefault();
     try {
+        // Collect selected roles
+        const selectedRoles = [];
+        const roleCheckboxes = document.querySelectorAll('input[name="userRole"]:checked');
+        roleCheckboxes.forEach(checkbox => {
+            selectedRoles.push(checkbox.value);
+        });
+
         const data = {
             providerId: parseInt(document.getElementById('userProviderId').value),
             name: document.getElementById('userName').value,
             email: document.getElementById('userEmail').value,
             address: document.getElementById('userAddress').value,
             password: document.getElementById('userPassword').value,
-            phoneNumber: document.getElementById('userPhone').value
+            phoneNumber: document.getElementById('userPhone').value,
+            roles: selectedRoles.length > 0 ? selectedRoles : null
         };
 
         await apiCall('/admin/users', { method: 'POST', body: JSON.stringify(data) });
-        alert('Customer created successfully!');
+        alert('User created successfully!');
         e.target.reset();
         loadUsers();
     } catch (error) {
@@ -282,28 +315,30 @@ async function loadUsers() {
         const users = await apiCall('/admin/users');
         if (!users) return; // Token expired, user redirected to login
         const html = `
-            <table>
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Role</th>
-                        <th>Provider</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    ${users.map(u => `
+            <div class="table-container">
+                <table>
+                    <thead>
                         <tr>
-                            <td>${u.userId}</td>
-                            <td>${u.name}</td>
-                            <td>${u.email}</td>
-                            <td><span class="badge badge-info">${u.role}</span></td>
-                            <td>${u.provider?.name || 'No Provider'}</td>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Role</th>
+                            <th>Provider</th>
                         </tr>
-                    `).join('')}
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        ${users.map(u => `
+                            <tr>
+                                <td>${u.userId}</td>
+                                <td>${u.name}</td>
+                                <td>${u.email}</td>
+                                <td><span class="badge badge-info">${u.role}</span></td>
+                                <td>${u.provider?.name || 'No Provider'}</td>
+                            </tr>
+                        `).join('')}
+                    </tbody>
+                </table>
+            </div>
         `;
         document.getElementById('usersList').innerHTML = html;
     } catch (error) {
@@ -342,30 +377,32 @@ async function loadProviders() {
         const provider = await apiCall(`/admin/providers/${currentUser.providerId}`);
         if (!provider) return; // Token expired, user redirected to login
         const html = `
-            <table>
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>City</th>
-                        <th>Email</th>
-                        <th>Current kWh Price</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>${provider.providerId}</td>
-                        <td>${provider.name}</td>
-                        <td>${provider.city}</td>
-                        <td>${provider.email}</td>
-                        <td>${provider.currentKwhPrice}</td>
-                        <td>
-                            <button class="btn btn-primary" onclick="updatePrice(${provider.providerId})">Update Price</button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>City</th>
+                            <th>Email</th>
+                            <th>Current kWh Price</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>${provider.providerId}</td>
+                            <td>${provider.name}</td>
+                            <td>${provider.city}</td>
+                            <td>${provider.email}</td>
+                            <td>${provider.currentKwhPrice}</td>
+                            <td>
+                                <button class="btn btn-primary" onclick="updatePrice(${provider.providerId})">Update Price</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         `;
         document.getElementById('providersList').innerHTML = html;
     } catch (error) {
@@ -533,42 +570,44 @@ function displayInvoices(invoices, containerId) {
     const canEdit = currentUser && (currentUser.role === 'Invoice_Creator' || currentUser.role === 'Super_Creator');
 
     const html = `
-        <table>
-            <thead>
-                <tr>
-                    <th>Invoice #</th>
-                    <th>Customer</th>
-                    <th>Provider</th>
-                    <th>Created By</th>
-                    <th>kWh</th>
-                    <th>Price/kWh</th>
-                    <th>Total Amount</th>
-                    <th>Issue Date</th>
-                    <th>Due Date</th>
-                    <th>Payment Date</th>
-                    <th>Status</th>
-                    ${canEdit ? '<th>Actions</th>' : ''}
-                </tr>
-            </thead>
-            <tbody>
-                ${invoices.map(inv => `
+        <div class="table-container">
+            <table>
+                <thead>
                     <tr>
-                        <td>${inv.invoiceNumber || 'N/A'}</td>
-                        <td>${inv.customer?.name || 'N/A'}</td>
-                        <td>${inv.provider?.name || 'N/A'}</td>
-                        <td>${inv.createdByUser?.name || 'N/A'}</td>
-                        <td>${inv.kwhConsumed || 0}</td>
-                        <td>${inv.pricing?.kwhPrice || 'N/A'}</td>
-                        <td>${inv.totalAmount || 0}</td>
-                        <td>${inv.issueDate || 'N/A'}</td>
-                        <td>${inv.dueDate || 'N/A'}</td>
-                        <td>${inv.paymentDate || '-'}</td>
-                        <td>${statusBadge(inv.paymentStatus)}</td>
-                        ${canEdit ? `<td><button class="btn btn-sm btn-primary" onclick='openUpdateModal(${JSON.stringify(inv)})'>Edit</button></td>` : ''}
+                        <th>Invoice #</th>
+                        <th>Customer</th>
+                        <th>Provider</th>
+                        <th>Created By</th>
+                        <th>kWh</th>
+                        <th>Price/kWh</th>
+                        <th>Total Amount</th>
+                        <th>Issue Date</th>
+                        <th>Due Date</th>
+                        <th>Payment Date</th>
+                        <th>Status</th>
+                        ${canEdit ? '<th>Actions</th>' : ''}
                     </tr>
-                `).join('')}
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    ${invoices.map(inv => `
+                        <tr>
+                            <td>${inv.invoiceNumber || 'N/A'}</td>
+                            <td>${inv.customer?.name || 'N/A'}</td>
+                            <td>${inv.provider?.name || 'N/A'}</td>
+                            <td>${inv.createdByUser?.name || 'N/A'}</td>
+                            <td>${inv.kwhConsumed || 0}</td>
+                            <td>${inv.pricing?.kwhPrice || 'N/A'}</td>
+                            <td>${inv.totalAmount || 0}</td>
+                            <td>${inv.issueDate || 'N/A'}</td>
+                            <td>${inv.dueDate || 'N/A'}</td>
+                            <td>${inv.paymentDate || '-'}</td>
+                            <td>${statusBadge(inv.paymentStatus)}</td>
+                            ${canEdit ? `<td><button class="btn btn-sm btn-primary" onclick='openUpdateModal(${JSON.stringify(inv)})'>Edit</button></td>` : ''}
+                        </tr>
+                    `).join('')}
+                </tbody>
+            </table>
+        </div>
     `;
     document.getElementById(containerId).innerHTML = html;
 }
@@ -609,28 +648,30 @@ async function searchAuditLogs() {
             <div style="margin-bottom: 15px; padding: 10px; background-color: #e8f5e9; border-left: 4px solid #4caf50; border-radius: 4px;">
                 <strong>Found ${logs.length} audit log(s) for Invoice: ${invoiceNumber}</strong>
             </div>
-            <table>
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Invoice #</th>
-                        <th>Action</th>
-                        <th>Performed By</th>
-                        <th>Date</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    ${logs.map(log => `
+            <div class="table-container">
+                <table>
+                    <thead>
                         <tr>
-                            <td>${log.auditId}</td>
-                            <td>${log.invoice?.invoiceNumber || 'N/A'}</td>
-                            <td><span class="badge badge-info">${log.action}</span></td>
-                            <td>${log.performedByUser?.name || 'N/A'}</td>
-                            <td>${new Date(log.performedAt).toLocaleString()}</td>
+                            <th>ID</th>
+                            <th>Invoice #</th>
+                            <th>Action</th>
+                            <th>Performed By</th>
+                            <th>Date</th>
                         </tr>
-                    `).join('')}
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        ${logs.map(log => `
+                            <tr>
+                                <td>${log.auditId}</td>
+                                <td>${log.invoice?.invoiceNumber || 'N/A'}</td>
+                                <td><span class="badge badge-info">${log.action}</span></td>
+                                <td>${log.performedByUser?.name || 'N/A'}</td>
+                                <td>${new Date(log.performedAt).toLocaleString()}</td>
+                            </tr>
+                        `).join('')}
+                    </tbody>
+                </table>
+            </div>
         `;
         document.getElementById('auditLogs').innerHTML = html;
     } catch (error) {
@@ -649,6 +690,42 @@ function clearAuditSearch() {
     loadAuditLogs();
 }
 
+// Helper function to format cell values nicely
+function formatCellValue(val) {
+    if (val === null || val === undefined) {
+        return '<span style="color: #999; font-style: italic;">null</span>';
+    }
+    
+    // Check if it's a JSON string
+    if (typeof val === 'string' && (val.startsWith('{') || val.startsWith('['))) {
+        try {
+            const parsed = JSON.parse(val);
+            
+            // If it's an array, format differently
+            if (Array.isArray(parsed)) {
+                return parsed.map(item => 
+                    `<div style="margin: 2px 0; padding: 4px 8px; background: #f8f9fa; border-radius: 3px;">${item}</div>`
+                ).join('');
+            }
+            
+            // Format object as vertical list with better styling
+            return Object.entries(parsed).map(([key, value]) => {
+                // Format the key nicely (camelCase to Title Case)
+                const formattedKey = key.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase());
+                return `<div style="margin: 4px 0; padding: 3px 0; border-bottom: 1px dotted #e0e0e0;">
+                    <strong style="color: #667eea;">${formattedKey}:</strong> 
+                    <span style="color: #2c3e50;">${value !== null ? value : '<i style="color: #999;">null</i>'}</span>
+                </div>`;
+            }).join('');
+        } catch (e) {
+            // If parsing fails, return as is
+            return val;
+        }
+    }
+    
+    return val;
+}
+
 async function handleNLQuery(e) {
     e.preventDefault();
     const query = document.getElementById('nlQuery').value;
@@ -665,20 +742,22 @@ async function handleNLQuery(e) {
                 <p><strong>Generated SQL:</strong></p>
                 <pre>${result.generatedSQL}</pre>
                 <p><strong>Results (${result.rowCount} rows):</strong></p>
-                <table>
-                    <thead>
-                        <tr>
-                            ${result.results.length > 0 ? Object.keys(result.results[0]).map(key => `<th>${key}</th>`).join('') : ''}
-                        </tr>
-                    </thead>
-                    <tbody>
-                        ${result.results.map(row => `
+                <div class="table-container">
+                    <table>
+                        <thead>
                             <tr>
-                                ${Object.values(row).map(val => `<td>${val}</td>`).join('')}
+                                ${result.results.length > 0 ? Object.keys(result.results[0]).map(key => `<th>${key}</th>`).join('') : ''}
                             </tr>
-                        `).join('')}
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                            ${result.results.map(row => `
+                                <tr>
+                                    ${Object.values(row).map(val => `<td>${formatCellValue(val)}</td>`).join('')}
+                                </tr>
+                            `).join('')}
+                        </tbody>
+                    </table>
+                </div>
             </div>
         `;
         document.getElementById('queryResults').innerHTML = html;
@@ -791,28 +870,169 @@ function displayPricingHistory(history) {
     }
 
     const html = `
-        <table>
-            <thead>
-                <tr>
-                    <th>Changed By (Admin)</th>
-                    <th>Price (₪/kWh)</th>
-                    <th>Valid From</th>
-                    <th>Valid To</th>
-                    <th>Status</th>
-                </tr>
-            </thead>
-            <tbody>
-                ${history.map(h => `
+        <div class="table-container">
+            <table>
+                <thead>
                     <tr>
-                        <td><strong>${h.changedByUser?.name || 'N/A'}</strong></td>
-                        <td>${h.kwhPrice}</td>
-                        <td>${new Date(h.validFrom).toLocaleString()}</td>
-                        <td>${h.validTo ? new Date(h.validTo).toLocaleString() : '<span class="badge badge-success">Current</span>'}</td>
-                        <td>${h.validTo ? '<span class="badge badge-info">Expired</span>' : '<span class="badge badge-success">Active ✓</span>'}</td>
+                        <th>Changed By (Admin)</th>
+                        <th>Price (₪/kWh)</th>
+                        <th>Valid From</th>
+                        <th>Valid To</th>
+                        <th>Status</th>
                     </tr>
-                `).join('')}
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    ${history.map(h => `
+                        <tr>
+                            <td><strong>${h.changedByUser?.name || 'N/A'}</strong></td>
+                            <td>${h.kwhPrice}</td>
+                            <td>${new Date(h.validFrom).toLocaleString()}</td>
+                            <td>${h.validTo ? new Date(h.validTo).toLocaleString() : '<span class="badge badge-success">Current</span>'}</td>
+                            <td>${h.validTo ? '<span class="badge badge-info">Expired</span>' : '<span class="badge badge-success">Active ✓</span>'}</td>
+                        </tr>
+                    `).join('')}
+                </tbody>
+            </table>
+        </div>
     `;
     document.getElementById('pricingHistory').innerHTML = html;
+}
+
+// ========== Multi-Role Functions ==========
+
+// Role icons mapping
+const roleIcons = {
+    'Admin': '👑',
+    'Customer': '👤',
+    'Invoice_Creator': '📝',
+    'Super_Creator': '⚡',
+    'Auditor': '🔍'
+};
+
+// Role descriptions
+const roleDescriptions = {
+    'Admin': 'Manage users, providers, and system settings',
+    'Customer': 'View and manage your invoices',
+    'Invoice_Creator': 'Create and manage invoices',
+    'Super_Creator': 'Full provider invoice management',
+    'Auditor': 'Audit and review system data'
+};
+
+function showRoleSelection(userData) {
+    showPage('roleSelectionPage');
+    
+    document.getElementById('roleSelectionUserName').textContent = userData.name;
+    
+    const roleButtonsHtml = userData.roles.map(role => `
+        <button class="role-button" onclick="selectRole('${role}', ${userData.userId})">
+            <span class="role-icon">${roleIcons[role] || '🔹'}</span>
+            <div class="role-text">
+                <span class="role-name">Continue as ${role.replace('_', ' ')}</span>
+                <span class="role-description">${roleDescriptions[role] || ''}</span>
+            </div>
+        </button>
+    `).join('');
+    
+    document.getElementById('roleButtons').innerHTML = roleButtonsHtml;
+}
+
+async function selectRole(selectedRole, userId) {
+    try {
+        const response = await fetch(`${API_BASE}/auth/select-role?userId=${userId}`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ selectedRole })
+        });
+
+        if (!response.ok) {
+            const error = await response.json();
+            throw new Error(error.message || 'Role selection failed');
+        }
+
+        const data = await response.json();
+        authToken = data.token;
+        currentUser = data;
+        currentUser.role = data.selectedRole;
+
+        console.log('Role selected:', selectedRole);
+        console.log('New token:', authToken);
+
+        localStorage.setItem('authToken', authToken);
+        localStorage.setItem('currentUser', JSON.stringify(currentUser));
+
+        showDashboard();
+    } catch (error) {
+        alert('Error selecting role: ' + error.message);
+    }
+}
+
+function setupRoleSwitcher() {
+    const dropdown = document.getElementById('roleSwitcherDropdown');
+    
+    const rolesHtml = currentUser.roles.map(role => `
+        <div class="role-switcher-item ${role === currentUser.role ? 'current' : ''}" 
+             onclick="switchRole('${role}')">
+            <span class="role-icon">${roleIcons[role] || '🔹'}</span>
+            <span>${role.replace('_', ' ')}${role === currentUser.role ? ' (Current)' : ''}</span>
+        </div>
+    `).join('');
+    
+    dropdown.innerHTML = rolesHtml;
+}
+
+function toggleRoleSwitcher() {
+    const dropdown = document.getElementById('roleSwitcherDropdown');
+    dropdown.classList.toggle('active');
+}
+
+// Close dropdown when clicking outside
+document.addEventListener('click', function(event) {
+    const switcher = document.getElementById('roleSwitcher');
+    const dropdown = document.getElementById('roleSwitcherDropdown');
+    
+    if (switcher && !switcher.contains(event.target)) {
+        dropdown?.classList.remove('active');
+    }
+});
+
+async function switchRole(newRole) {
+    if (newRole === currentUser.role) {
+        document.getElementById('roleSwitcherDropdown').classList.remove('active');
+        return;
+    }
+
+    try {
+        const response = await fetch(`${API_BASE}/auth/switch-role?userId=${currentUser.userId}`, {
+            method: 'POST',
+            headers: { 
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${authToken}`
+            },
+            body: JSON.stringify({ selectedRole: newRole })
+        });
+
+        if (!response.ok) {
+            const error = await response.json();
+            throw new Error(error.message || 'Role switch failed');
+        }
+
+        const data = await response.json();
+        authToken = data.token;
+        currentUser = data;
+        currentUser.role = data.selectedRole;
+
+        console.log('Switched to role:', newRole);
+        console.log('New token:', authToken);
+
+        localStorage.setItem('authToken', authToken);
+        localStorage.setItem('currentUser', JSON.stringify(currentUser));
+
+        // Close dropdown
+        document.getElementById('roleSwitcherDropdown').classList.remove('active');
+
+        // Reload dashboard with new role
+        showDashboard();
+    } catch (error) {
+        alert('Error switching role: ' + error.message);
+    }
 }

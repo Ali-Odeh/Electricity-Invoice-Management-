@@ -27,12 +27,10 @@ public class AuditLog {
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "invoice_id")
-  //  @JsonIgnoreProperties({"customer", "provider", "createdByUser", "pricing"})
-    private Invoice invoice;
+     private Invoice invoice;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "performed_by_user_id")
-   // @JsonIgnoreProperties({"password", "provider", "createdAt", "updatedAt"})
     private User performedByUser;
 
     @Enumerated(EnumType.STRING)

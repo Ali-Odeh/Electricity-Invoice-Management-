@@ -18,17 +18,17 @@ public class JwtUtil {
     @Value("${jwt.secret:mySecretKeyForJWTTokenGenerationAndValidation12345678901234567890}")
     private String secret;
 
-    @Value("${jwt.expiration:86400000}")
+    @Value("${jwt.expiration:43200000}")
     private Long expiration;
 
     private SecretKey getSigningKey() {
         return Keys.hmacShaKeyFor(secret.getBytes());
     }
 
-    // Generate token with user details
-    public String generateToken(String email, String role, Integer userId) {
+    // Generate token with user details and selected role
+    public String generateToken(String email, String selectedRole, Integer userId) {
         Map<String, Object> claims = new HashMap<>();
-        claims.put("role", role);
+        claims.put("selectedRole", selectedRole);  // Store the currently active role
         claims.put("userId", userId);
         return createToken(claims, email);
     }
@@ -52,9 +52,9 @@ public class JwtUtil {
         return extractClaim(token, Claims::getSubject);
     }
 
-    // Extract role from token
-    public String extractRole(String token) {
-        return extractClaim(token, claims -> claims.get("role", String.class));
+    // Extract selected role from token
+    public String extractSelectedRole(String token) {
+        return extractClaim(token, claims -> claims.get("selectedRole", String.class));
     }
 
     // Extract userId from token

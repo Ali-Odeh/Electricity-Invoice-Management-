@@ -1,12 +1,15 @@
 package Electricity.Management.dto;
 
 
+import Electricity.Management.Enum.Role;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 
 @Data
@@ -29,6 +32,9 @@ public class CreateUserRequest {
 
     private String address;
     private String phoneNumber;
+
+    // Roles to assign (Admin selects these)
+    private List<Role> roles;
 
 
 }

@@ -32,19 +32,20 @@ public class SecurityConfig {
                 .cors(cors -> cors.configurationSource(corsConfigurationSource()))
                 .authorizeHttpRequests(auth -> auth
                         // Public endpoints
-                        .requestMatchers("/api/auth/**").permitAll()
+                        .requestMatchers("/api/auth/login").permitAll()
+                        .requestMatchers("/api/auth/select-role").permitAll()  // Allow role selection without token
+                        .requestMatchers("/api/auth/switch-role").authenticated()  // Require token for role switching
                         .requestMatchers("/swagger-ui/**", "/v3/api-docs/**", "/swagger-ui.html").permitAll()
                         .requestMatchers("/", "/index.html", "/style.css", "/script.js").permitAll()
 
                         // Admin endpoints
                         .requestMatchers("/api/admin/**").hasRole("Admin")
-                        .requestMatchers("/api/admin/providers").hasRole("Admin")
 
-
+                        // Invoice endpoints
                         .requestMatchers("/api/invoices/my-invoices").hasRole("Customer")
                         .requestMatchers("/api/invoices/my-created").hasRole("Invoice_Creator")
                         .requestMatchers("/api/invoices/provider").hasRole("Super_Creator")
-                        .requestMatchers("/api/invoices/{id}").hasAnyRole("Invoice_Creator", "Super_Creator")
+                        .requestMatchers("/api/invoices/{id}").hasAnyRole("Invoice_Creator", "Super_Creator", "Customer")
                         .requestMatchers("/api/invoices").hasAnyRole("Invoice_Creator", "Super_Creator")
 
                         // Auditor endpoints

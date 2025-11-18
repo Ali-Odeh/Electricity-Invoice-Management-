@@ -30,6 +30,18 @@
         </div>
     </div>
 
+    <!-- Role Selection Page -->
+    <div id="roleSelectionPage" class="page">
+        <div class="container">
+            <div class="card role-selection-card">
+                <h1>⚡ Welcome!</h1>
+                <h2 id="roleSelectionUserName"></h2>
+                <p class="role-selection-subtitle">You have multiple roles. Choose how you want to continue:</p>
+                <div id="roleButtons" class="role-buttons"></div>
+            </div>
+        </div>
+    </div>
+
     <!-- Dashboard Page -->
     <div id="dashboardPage" class="page">
         <nav class="navbar">
@@ -37,6 +49,12 @@
                 <h1>⚡ Electricity Management</h1>
                 <div class="nav-right">
                     <span id="userInfo"></span>
+                    <div id="roleSwitcher" class="role-switcher" style="display:none;">
+                        <button class="role-switcher-btn" onclick="toggleRoleSwitcher()">
+                            Switch Role
+                        </button>
+                        <div id="roleSwitcherDropdown" class="role-switcher-dropdown"></div>
+                    </div>
                     <button onclick="logout()" class="btn btn-secondary">Logout</button>
                 </div>
             </div>
@@ -52,7 +70,7 @@
                 </div>
 
                 <div id="usersTab" class="tab-content active">
-                    <h3>Create Customer</h3>
+                    <h3>Create User</h3>
                     <form id="createUserForm" class="inline-form">
                         <input type="number" id="userProviderId" placeholder="Provider ID" required>
                         <input type="text" id="userName" placeholder="Name" required>
@@ -60,7 +78,19 @@
                         <input type="text" id="userAddress" placeholder="Address" required>
                         <input type="password" id="userPassword" placeholder="Password" required>
                         <input type="text" id="userPhone" placeholder="Phone">
-                        <button type="submit" class="btn btn-primary">Create Customer</button>
+                        
+                        <div class="role-selector">
+                            <label><strong>Select Roles:</strong></label>
+                            <div class="checkbox-group">
+                                <label><input type="checkbox" name="userRole" value="Customer"> 👤 Customer</label>
+                                <label><input type="checkbox" name="userRole" value="Invoice_Creator"> 📝 Invoice Creator</label>
+                                <label><input type="checkbox" name="userRole" value="Super_Creator"> ⚡ Super Creator</label>
+                                <label><input type="checkbox" name="userRole" value="Auditor"> 🔍 Auditor</label>
+                                <label><input type="checkbox" name="userRole" value="Admin"> 👑 Admin</label>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">Create User</button>
                     </form>
                 </div>
 

@@ -1,6 +1,5 @@
 package Electricity.Management.entity;
 
-import Electricity.Management.Enum.UserRole;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -10,6 +9,8 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
+import java.util.HashSet;
+import java.util.Set;
 
 
 @Entity
@@ -17,8 +18,6 @@ import java.time.LocalDateTime;
 @Table(name = "User")
 @NoArgsConstructor
 @AllArgsConstructor
-
-
 public class User {
 
     @Id
@@ -27,7 +26,6 @@ public class User {
 
     @ManyToOne
     @JoinColumn(name = "provider_id")
-    // @JsonIgnoreProperties({"createdAt", "updatedAt", "isActive"})
     private Provider provider;
 
     private String name;
@@ -50,8 +48,9 @@ public class User {
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 
-    @Enumerated(EnumType.STRING)
-    private UserRole role;
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    @JsonIgnore
+    private Set<UserRole> userRoles = new HashSet<>();
 
     @Column(name = "is_active")
     private Boolean isActive = true;

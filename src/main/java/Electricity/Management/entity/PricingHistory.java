@@ -28,12 +28,10 @@ public class PricingHistory {
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "provider_id", nullable = false)
-  //  @JsonIgnoreProperties({"createdAt", "updatedAt", "isActive"})
     private Provider provider;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "changed_by_user_id")
-   // @JsonIgnoreProperties({"password", "provider", "createdAt", "updatedAt"})
     private User changedByUser;
 
     @Column(name = "kwh_price")

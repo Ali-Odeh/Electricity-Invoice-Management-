@@ -1,16 +1,18 @@
 package Electricity.Management.service;
 
-import Electricity.Management.Enum.UserRole;
+import Electricity.Management.Enum.Role;
 import Electricity.Management.dto.CreateProviderRequest;
 import Electricity.Management.dto.CreateUserRequest;
 import Electricity.Management.entity.PricingHistory;
 import Electricity.Management.entity.Provider;
 import Electricity.Management.entity.User;
+import Electricity.Management.entity.UserRole;
 import Electricity.Management.exception.ResourceNotFoundException;
 import Electricity.Management.exception.BadRequestException;
 import Electricity.Management.repository.PricingHistoryRepository;
 import Electricity.Management.repository.ProviderRepository;
 import Electricity.Management.repository.UserRepository;
+import Electricity.Management.repository.UserRoleRepository;
 import jakarta.transaction.Transactional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -36,6 +38,9 @@ public class AdminService {
     @Autowired
     private PricingHistoryRepository pricingHistoryRepository;
 
+    @Autowired
+    private UserRoleRepository userRoleRepository;
+
 
     @Transactional
     public User createCustomer(CreateUserRequest request) {
@@ -56,12 +61,24 @@ public class AdminService {
         user.setPassword(request.getPassword());
         user.setAddress(request.getAddress());
         user.setPhoneNumber(request.getPhoneNumber());
-        user.setRole(UserRole.Customer);
         user.setIsActive(true);
 
         User savedUser = userRepository.save(user);
 
-        logger.info("Customer created successfully with ID: {}", savedUser.getUserId());
+        // Assign roles selected by Admin
+        if (request.getRoles() == null || request.getRoles().isEmpty()) {
+            // If no roles provided, assign Customer role by default
+            UserRole userRole = new UserRole(savedUser, Role.Customer);
+            userRoleRepository.save(userRole);
+            logger.info("User created successfully with ID: {} and default role Customer", savedUser.getUserId());
+        } else {
+            // Assign all selected roles
+            for (Role role : request.getRoles()) {
+                UserRole userRole = new UserRole(savedUser, role);
+                userRoleRepository.save(userRole);
+            }
+            logger.info("User created successfully with ID: {} and roles: {}", savedUser.getUserId(), request.getRoles());
+        }
 
         return savedUser;
     }
@@ -108,6 +125,7 @@ public class AdminService {
 
     @org.springframework.transaction.annotation.Transactional
     public Provider updateProviderPrice(Integer providerId, UpdatePriceRequest request, Integer adminUserId) {
+
         logger.info("Updating price for provider ID: {}", providerId);
 
         Provider provider = providerRepository.findById(providerId)
@@ -139,6 +157,7 @@ public class AdminService {
         Provider updatedProvider = providerRepository.save(provider);
 
         logger.info("Provider price updated successfully to: {}", request.getNewKwhPrice());
+
         return updatedProvider;
     }
 
@@ -151,14 +170,14 @@ public class AdminService {
 
 
 
-    @Transactional
+ /*   @Transactional
     public void deleteUser(Integer userId) {
         logger.info("Deleting user with ID: {}", userId);
         User user = userRepository.findById(userId)
                 .orElseThrow(() -> new ResourceNotFoundException("User not found"));
         userRepository.delete(user);
         logger.info("User deleted successfully");
-    }
+    }*/
 
 
 }

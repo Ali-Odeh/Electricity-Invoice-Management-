@@ -29,22 +29,18 @@ public class Invoice {
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "customer_id")
-  //   @JsonIgnoreProperties({"password", "provider", "createdAt", "updatedAt"})
     private User customer;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "provider_id")
-     // @JsonIgnoreProperties({"createdAt", "updatedAt", "isActive"})
     private Provider provider;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "created_by_user_id")
- //   @JsonIgnoreProperties({"password", "provider", "createdAt", "updatedAt"})
     private User createdByUser;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "pricing_id")
-    // @JsonIgnoreProperties({"provider", "changedByUser", "createdAt"})
     private PricingHistory pricing;
 
     @Column(name = "invoice_number",unique = true)
